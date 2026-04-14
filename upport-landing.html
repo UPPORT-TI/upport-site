@@ -1,0 +1,4334 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Üpport | Suporte de TI Gerenciado | São Paulo</title>
+    <link rel="icon" type="image/png" href="assets/fav.png?v=1.1" />
+    <link rel="shortcut icon" href="assets/fav.png?v=1.1" type="image/x-icon" />
+    <link rel="manifest" href="manifest.json" />
+    <meta name="theme-color" content="#1b3a6b" />
+    <link rel="apple-touch-icon" href="assets/icon-192.png" />
+    <meta name="mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400;1,500;1,600&family=Space+Mono:wght@400;700&family=DM+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap"
+      rel="stylesheet"
+    />
+    <link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet">
+    <script src="https://assets.calendly.com/assets/external/widget.js" type="text/javascript" async></script>
+    <style>
+      *,
+      *::before,
+      *::after {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      :root {
+        --bg-primary: #ffffff;
+        --bg-secondary: #f6f8fb;
+        --bg-page: #edf0f4;
+        --bg-card: #ffffff;
+        --border: #e5e9f0;
+        --border-hover: #cbd2de;
+        --accent: #1b3a6b;
+        --accent-light: #2d5ba0;
+        --accent-bright: #3b7ddd;
+        --accent-glow: rgba(27, 58, 107, 0.06);
+        --blue-gradient: linear-gradient(135deg, #1b3a6b 0%, #2d5ba0 100%);
+        --cyan: #0ea5e9;
+        --green: #10b981;
+        --text-primary: #0f172a;
+        --text-secondary: #334155;
+        --text-tertiary: #64748b;
+        --text-muted: #94a3b8;
+        --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.04);
+        --shadow-md: 0 4px 16px rgba(0, 0, 0, 0.06);
+        --shadow-lg: 0 12px 40px rgba(0, 0, 0, 0.08);
+        --font-display: "Plus Jakarta Sans", sans-serif;
+        --font-body: "DM Sans", sans-serif;
+        --font-mono: "Space Mono", monospace;
+      }
+      html {
+        scroll-behavior: smooth;
+        scrollbar-width: none; /* Firefox */
+        -ms-overflow-style: none; /* IE/Edge */
+      }
+      html::-webkit-scrollbar {
+        display: none; /* Chrome/Safari */
+      }
+      body {
+        background: var(--bg-page);
+        background-image: radial-gradient(rgba(27, 58, 107, 0.06) 1.5px, transparent 1.5px);
+        background-size: 24px 24px;
+        color: var(--text-secondary);
+        font-family: var(--font-body);
+        line-height: 1.6;
+        overflow-x: hidden;
+        scrollbar-width: none;
+        -ms-overflow-style: none;
+      }
+      body::-webkit-scrollbar {
+        display: none;
+      }
+
+      .container {
+        max-width: 1080px;
+        margin: 0 auto;
+        padding: 0 32px;
+      }
+      .section {
+        padding: 80px 0;
+      }
+      .section-label {
+        font-family: var(--font-mono);
+        font-size: 12px;
+        letter-spacing: 3px;
+        text-transform: uppercase;
+        color: var(--accent-bright);
+        margin-bottom: 14px;
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        font-weight: 700;
+      }
+      .section-label::before {
+        content: "//";
+        color: var(--cyan);
+      }
+      .section-title {
+        font-family: var(--font-display);
+        font-size: clamp(1.8rem, 3.5vw, 2.5rem);
+        font-weight: 800;
+        color: var(--text-primary);
+        line-height: 1.15;
+        margin-bottom: 14px;
+      }
+      .section-subtitle {
+        font-size: 16px;
+        color: var(--text-tertiary);
+        max-width: 520px;
+        line-height: 1.7;
+      }
+
+      .btn {
+        display: inline-flex;
+        align-items: center;
+        gap: 10px;
+        padding: 13px 28px;
+        border-radius: 12px;
+        font-family: var(--font-display);
+        font-weight: 700;
+        font-size: 14px;
+        border: none;
+        cursor: pointer;
+        transition: all 0.3s;
+        text-decoration: none;
+      }
+      .btn-primary {
+        background: var(--blue-gradient);
+        color: white;
+        box-shadow: 0 4px 16px rgba(27, 58, 107, 0.25);
+      }
+      .btn-primary:hover {
+        box-shadow: 0 8px 28px rgba(27, 58, 107, 0.35);
+        transform: translateY(-2px);
+      }
+      .btn-outline {
+        background: transparent;
+        color: var(--text-primary);
+        border: 2px solid var(--border);
+      }
+      .btn-outline:hover {
+        border-color: var(--accent);
+        color: var(--accent);
+        transform: translateY(-2px);
+      }
+      .btn-green {
+        background: linear-gradient(135deg, #10b981, #059669);
+        color: white;
+        box-shadow: 0 4px 16px rgba(16, 185, 129, 0.25);
+      }
+      .btn-green:hover {
+        box-shadow: 0 8px 28px rgba(16, 185, 129, 0.35);
+        transform: translateY(-2px);
+      }
+
+      /* ===== TOPBAR ===== */
+      .topbar {
+        background: var(--accent);
+        padding: 7px 0;
+        font-size: 12px;
+        color: white;
+      }
+      .topbar .container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        flex-wrap: wrap;
+        gap: 8px;
+      }
+      .topbar-left,
+      .topbar-right {
+        display: flex;
+        align-items: center;
+        gap: 18px;
+      }
+      .topbar a {
+        color: white;
+        text-decoration: none;
+        display: flex;
+        align-items: center;
+        gap: 5px;
+        font-weight: 500;
+      }
+      .topbar svg {
+        width: 13px;
+        height: 13px;
+      }
+      .topbar .btn-area-top {
+        padding: 3px 12px;
+        border-radius: 6px;
+        border: 1px solid rgba(255, 255, 255, 0.35);
+        font-size: 11px;
+        font-weight: 600;
+      }
+
+      /* ===== HEADER ===== */
+      header {
+        position: sticky;
+        top: 0;
+        z-index: 99;
+        background: rgba(255, 255, 255, 0.92);
+        backdrop-filter: blur(20px);
+        border-bottom: 1px solid var(--border);
+      }
+      header .container {
+        position: relative;
+      }
+      .header-inner {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 12px 0;
+      }
+      .logo {
+        font-family: var(--font-display);
+        font-size: 32px;
+        font-weight: 800;
+        color: var(--text-primary);
+        text-decoration: none;
+        letter-spacing: -0.5px;
+        display: flex;
+        align-items: center;
+        gap: 12px;
+      }
+      .logo-icon {
+        width: 56px;
+        height: 56px;
+        background: var(--blue-gradient);
+        border-radius: 14px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 26px;
+        font-weight: 800;
+        color: white;
+      }
+      nav {
+        display: flex;
+        align-items: center;
+        gap: 28px;
+      }
+      nav a {
+        color: var(--text-tertiary);
+        text-decoration: none;
+        font-size: 13px;
+        font-weight: 500;
+        transition: color 0.2s;
+      }
+      nav a:hover {
+        color: var(--text-primary);
+      }
+      .nav-item-dropdown {
+        position: static;
+        display: inline-block;
+        padding: 12px 0;
+      }
+      .dropdown-content {
+        visibility: hidden;
+        opacity: 0;
+        position: absolute;
+        top: 100%;
+        left: 50%;
+        transform: translateX(-50%) translateY(10px);
+        background: rgba(255, 255, 255, 0.98);
+        backdrop-filter: blur(20px);
+        width: 1000px;
+        max-width: 1080px;
+        box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+        border-radius: 16px;
+        border: 1px solid var(--border);
+        padding: 24px;
+        z-index: 1000;
+        transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 20px;
+        pointer-events: none;
+      }
+      .nav-item-dropdown:hover .dropdown-content {
+        visibility: visible;
+        opacity: 1;
+        transform: translateX(-50%) translateY(0);
+        pointer-events: auto;
+      }
+      .dropdown-card {
+        padding: 16px;
+        border-radius: 12px;
+        background: transparent;
+        transition: all 0.3s;
+        text-decoration: none;
+        display: block;
+        border: 1px solid transparent;
+      }
+      .dropdown-content a.dropdown-card {
+        color: initial;
+      }
+      .dropdown-card:hover {
+        background: var(--bg-secondary);
+        border-color: var(--border-hover);
+        transform: translateY(-2px);
+      }
+      .dropdown-card h4 {
+        font-family: var(--font-display);
+        font-size: 15px;
+        font-weight: 800;
+        color: var(--accent);
+        margin-bottom: 6px;
+      }
+      .dropdown-card p {
+        font-size: 11px;
+        color: var(--text-tertiary);
+        margin-bottom: 12px;
+        line-height: 1.4;
+      }
+      .dropdown-card ul {
+        list-style: none;
+        padding: 0;
+        margin-bottom: 14px;
+      }
+      .dropdown-card ul li {
+        font-size: 11px;
+        color: var(--text-secondary);
+        display: flex;
+        align-items: flex-start;
+        gap: 6px;
+        margin-bottom: 6px;
+      }
+      .dropdown-card ul li svg {
+        color: var(--cyan);
+        width: 14px;
+        height: 14px;
+        flex-shrink: 0;
+        margin-top: 1px;
+      }
+      .dropdown-card .result {
+        font-size: 11px;
+        font-weight: 700;
+        color: var(--green);
+        display: inline-flex;
+        align-items: center;
+        gap: 6px;
+        padding: 4px 8px;
+        background: rgba(16, 185, 129, 0.1);
+        border-radius: 6px;
+      }
+      .btn-fale {
+        padding: 9px 22px;
+        border-radius: 10px;
+        background: var(--blue-gradient);
+        color: white;
+        text-decoration: none;
+        font-size: 13px;
+        font-weight: 700;
+        font-family: var(--font-display);
+        display: flex;
+        align-items: center;
+        gap: 6px;
+        transition: all 0.3s;
+        box-shadow: 0 2px 8px rgba(27, 58, 107, 0.2);
+      }
+      .btn-fale:hover {
+        box-shadow: 0 4px 16px rgba(27, 58, 107, 0.3);
+        transform: translateY(-1px);
+      }
+      .mobile-toggle {
+        display: none;
+        background: none;
+        border: none;
+        cursor: pointer;
+        padding: 8px;
+      }
+      .mobile-toggle span {
+        display: block;
+        width: 22px;
+        height: 2px;
+        background: var(--text-primary);
+        margin: 5px 0;
+      }
+
+      /* ===== CAROUSEL ===== */
+      .carousel {
+        position: relative;
+        overflow: hidden;
+        background: #ffffff;
+      }
+      @media (min-width: 768px) {
+        .carousel::before,
+        .carousel::after {
+          display: none;
+        }
+      }
+      .carousel-track {
+        display: flex;
+        transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+        will-change: transform;
+      }
+      .carousel-slide {
+        min-width: 100%;
+        position: relative;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+      .carousel-slide img {
+        width: 100%;
+        height: 80vh;
+        max-height: 700px;
+        min-height: 400px;
+        object-fit: cover;
+        display: block;
+      }
+      .carousel-btn {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        width: 44px;
+        height: 44px;
+        border-radius: 50%;
+        background: rgba(255, 255, 255, 0.85);
+        backdrop-filter: blur(8px);
+        border: 1px solid var(--border);
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition: all 0.2s;
+        z-index: 10;
+        box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
+      }
+      .carousel-btn:hover {
+        background: white;
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.12);
+      }
+      .carousel-btn svg {
+        width: 18px;
+        height: 18px;
+        color: var(--text-primary);
+      }
+      .carousel-prev {
+        left: 20px;
+      }
+      .carousel-next {
+        right: 20px;
+      }
+      .carousel-dots {
+        position: absolute;
+        bottom: 20px;
+        left: 50%;
+        transform: translateX(-50%);
+        display: flex;
+        gap: 8px;
+        z-index: 10;
+      }
+      .carousel-dot {
+        width: 10px;
+        height: 10px;
+        border-radius: 50%;
+        background: rgba(15, 23, 42, 0.2);
+        border: none;
+        cursor: pointer;
+        transition: all 0.3s;
+      }
+      .carousel-dot.active {
+        background: var(--accent);
+        width: 28px;
+        border-radius: 5px;
+      }
+
+      /* ===== STATS BAR ===== */
+      .stats-bar {
+        display: flex;
+        justify-content: center;
+        gap: 56px;
+        padding: 32px 0;
+        border-bottom: 1px solid var(--border);
+      }
+      .stat-item {
+        text-align: center;
+      }
+      .stat-value {
+        font-family: var(--font-display);
+        font-size: 26px;
+        font-weight: 800;
+        color: var(--text-primary);
+      }
+      .stat-label {
+        font-size: 12px;
+        color: var(--text-muted);
+        margin-top: 2px;
+      }
+
+      /* ===== PAIN POINTS ===== */
+      .pain-section {
+        background: var(--bg-secondary);
+        border-top: 1px solid var(--border);
+        border-bottom: 1px solid var(--border);
+      }
+      .pain-header {
+        text-align: center;
+        max-width: 520px;
+        margin: 0 auto 48px;
+      }
+      .pain-header .section-label {
+        justify-content: center;
+      }
+      .pain-grid {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 16px;
+      }
+      .pain-card {
+        background: var(--bg-card);
+        border: 1px solid var(--border);
+        border-radius: 14px;
+        padding: 28px 20px;
+        transition: all 0.3s;
+        position: relative;
+        overflow: hidden;
+      }
+      .pain-card::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        height: 3px;
+        background: linear-gradient(90deg, #ef4444, #f59e0b);
+        opacity: 0;
+        transition: opacity 0.3s;
+      }
+      .pain-card:hover {
+        box-shadow: var(--shadow-lg);
+        transform: translateY(-3px);
+      }
+      .pain-card:hover::before {
+        opacity: 1;
+      }
+      .pain-icon {
+        width: 44px;
+        height: 44px;
+        border-radius: 11px;
+        background: #fef2f2;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-bottom: 16px;
+        color: #ef4444;
+      }
+      .pain-card h3 {
+        font-family: var(--font-display);
+        font-size: 14px;
+        font-weight: 700;
+        color: var(--text-primary);
+        margin-bottom: 8px;
+        line-height: 1.35;
+      }
+      .pain-card p {
+        font-size: 13px;
+        color: var(--text-tertiary);
+        line-height: 1.6;
+      }
+      .pain-cta {
+        text-align: center;
+        margin-top: 40px;
+      }
+
+      /* ===== COMO FUNCIONA ===== */
+      .how-header {
+        text-align: center;
+        max-width: 500px;
+        margin: 0 auto 48px;
+      }
+      .how-header .section-label {
+        justify-content: center;
+      }
+      .how-subtitle {
+        font-size: 16px;
+        color: var(--text-tertiary);
+        margin-top: 6px;
+      }
+      .how-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 20px;
+        position: relative;
+      }
+      .how-grid::before {
+        content: "";
+        position: absolute;
+        top: 48px;
+        left: 17%;
+        right: 17%;
+        height: 2px;
+        background: linear-gradient(
+          90deg,
+          transparent,
+          var(--border),
+          transparent
+        );
+      }
+      .how-card {
+        background: var(--bg-card);
+        border: 1px solid var(--border);
+        border-radius: 16px;
+        padding: 32px 20px;
+        text-align: center;
+        transition: all 0.3s;
+      }
+      .how-card:hover {
+        box-shadow: var(--shadow-lg);
+        transform: translateY(-3px);
+      }
+      .how-number {
+        width: 48px;
+        height: 48px;
+        border-radius: 50%;
+        background: var(--blue-gradient);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-family: var(--font-display);
+        font-size: 18px;
+        font-weight: 800;
+        color: white;
+        margin: 0 auto 20px;
+        position: relative;
+        z-index: 2;
+      }
+      .how-card h3 {
+        font-family: var(--font-display);
+        font-size: 14px;
+        font-weight: 700;
+        color: var(--text-primary);
+        margin-bottom: 8px;
+        line-height: 1.3;
+      }
+      .how-card p {
+        font-size: 13px;
+        color: var(--text-tertiary);
+        line-height: 1.6;
+      }
+
+      /* ===== ABOUT ===== */
+      .about-section {
+        background: var(--bg-secondary);
+        border-top: 1px solid var(--border);
+        border-bottom: 1px solid var(--border);
+      }
+      .about-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 48px;
+        align-items: start;
+      }
+      .about-text p {
+        font-size: 15px;
+        color: var(--text-tertiary);
+        line-height: 1.75;
+        margin-bottom: 12px;
+      }
+      .about-text p em {
+        font-style: italic;
+        color: var(--text-primary);
+        font-weight: 500;
+      }
+      .about-cards {
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+      }
+      .about-card {
+        display: flex;
+        gap: 14px;
+        padding: 18px;
+        background: var(--bg-card);
+        border: 1px solid var(--border);
+        border-radius: 14px;
+        transition: all 0.3s;
+      }
+      .about-card:hover {
+        box-shadow: var(--shadow-md);
+        transform: translateY(-2px);
+      }
+      .about-card-icon {
+        width: 42px;
+        height: 42px;
+        border-radius: 10px;
+        background: var(--accent-glow);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-shrink: 0;
+        color: var(--accent);
+      }
+      .about-card h4 {
+        font-family: var(--font-display);
+        font-size: 14px;
+        font-weight: 700;
+        color: var(--text-primary);
+        margin-bottom: 3px;
+      }
+      .about-card p {
+        font-size: 12px;
+        color: var(--text-tertiary);
+        line-height: 1.5;
+      }
+      .about-services-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 8px;
+        margin-top: 16px;
+      }
+      .about-service-tag {
+        display: flex;
+        align-items: center;
+        gap: 7px;
+        padding: 9px 12px;
+        background: var(--bg-card);
+        border: 1px solid var(--border);
+        border-radius: 8px;
+        font-size: 12px;
+        font-weight: 600;
+        color: var(--text-secondary);
+      }
+      .about-service-tag svg {
+        color: var(--accent-bright);
+        flex-shrink: 0;
+      }
+
+      /* ===== PARTNERS ===== */
+      .partners-section {
+        text-align: center;
+      }
+      .partners-title {
+        font-family: var(--font-display);
+        font-size: clamp(1.8rem, 3.5vw, 2.4rem);
+        font-weight: 800;
+        color: var(--text-primary);
+        margin-bottom: 40px;
+      }
+      .partners-grid {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 1px;
+        background: var(--border);
+        border-radius: 14px;
+        overflow: hidden;
+        max-width: 780px;
+        margin: 0 auto;
+        border: 1px solid var(--border);
+      }
+      .partner-cell {
+        background: var(--bg-card);
+        padding: 30px 20px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition: background 0.3s;
+      }
+      .partner-cell:hover {
+        background: var(--bg-secondary);
+      }
+      .partner-logo {
+        max-width: 180px;
+        max-height: 60px;
+        object-fit: contain;
+      }
+
+      /* ===== PRICING ===== */
+      .pricing-section {
+        background: var(--bg-secondary);
+        border-top: 1px solid var(--border);
+        border-bottom: 1px solid var(--border);
+      }
+      .pricing-header {
+        text-align: center;
+        max-width: 460px;
+        margin: 0 auto 10px;
+      }
+      .pricing-header .section-label {
+        justify-content: center;
+      }
+      .pricing-sub {
+        text-align: center;
+        font-size: 15px;
+        color: var(--text-tertiary);
+        margin-bottom: 44px;
+      }
+      .marquee-container {
+        overflow: hidden;
+        padding: 16px 0;
+        margin-bottom: 40px;
+        border-bottom: 1px solid var(--border);
+      }
+      .marquee-track {
+        display: flex;
+        gap: 40px;
+        animation: marquee 20s linear infinite;
+        width: max-content;
+      }
+      @keyframes marquee {
+        0% {
+          transform: translateX(0);
+        }
+        100% {
+          transform: translateX(-50%);
+        }
+      }
+      .marquee-item {
+        font-family: var(--font-display);
+        font-size: 20px;
+        font-weight: 800;
+        color: var(--border-hover);
+        white-space: nowrap;
+        text-transform: uppercase;
+        letter-spacing: 3px;
+      }
+      .pricing-grid {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 16px;
+      }
+      .pricing-card {
+        background: rgba(255, 255, 255, 0.5);
+        backdrop-filter: blur(12px);
+        -webkit-backdrop-filter: blur(12px);
+        border: 1px solid rgba(255, 255, 255, 0.6);
+        border-radius: 16px;
+        padding: 28px 20px;
+        transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+        display: flex;
+        flex-direction: column;
+        position: relative;
+        overflow: visible; /* Fix para não cortar o badge */
+      }
+      .pricing-card::before {
+        content: "";
+        position: absolute;
+        top: 0; left: 0; width: 100%; height: 100%;
+        background: linear-gradient(135deg, rgba(255,255,255,0.4) 0%, transparent 100%);
+        opacity: 0;
+        transition: opacity 0.4s;
+        pointer-events: none;
+        z-index: 0;
+        border-radius: inherit; /* Segue as bordas arredondadas do card */
+      }
+      .pricing-card > * {
+        position: relative;
+        z-index: 1;
+      }
+      .pricing-card:hover {
+        box-shadow: 0 16px 40px rgba(27, 58, 107, 0.12);
+        transform: translateY(-4px);
+        border-color: rgba(59, 125, 221, 0.25);
+      }
+      .pricing-card:hover::before {
+        opacity: 1;
+      }
+      .pricing-card.popular {
+        background: rgba(255, 255, 255, 0.9);
+        border-color: var(--accent);
+        box-shadow: 0 8px 32px rgba(27, 58, 107, 0.15);
+      }
+      .pricing-badge {
+        position: absolute;
+        top: -11px;
+        left: 50%;
+        transform: translateX(-50%);
+        background: var(--blue-gradient);
+        color: white;
+        font-size: 10px;
+        font-weight: 700;
+        padding: 3px 14px;
+        border-radius: 100px;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+      }
+      .pricing-name {
+        font-family: var(--font-display);
+        font-size: 16px;
+        font-weight: 700;
+        color: var(--text-primary);
+        margin-bottom: 12px;
+      }
+      .pricing-price {
+        font-family: var(--font-display);
+        font-size: 30px;
+        font-weight: 800;
+        color: var(--text-primary);
+        margin-bottom: 3px;
+      }
+      .pricing-price span {
+        font-size: 14px;
+        color: var(--text-muted);
+        font-weight: 500;
+      }
+      .pricing-sla {
+        font-family: var(--font-mono);
+        font-size: 10px;
+        letter-spacing: 1px;
+        text-transform: uppercase;
+        color: var(--cyan);
+        margin-bottom: 20px;
+        font-weight: 700;
+      }
+      .pricing-features {
+        list-style: none;
+        margin-bottom: 24px;
+        flex-grow: 1;
+      }
+      .pricing-features li {
+        display: flex;
+        align-items: flex-start;
+        gap: 8px;
+        font-size: 12px;
+        color: var(--text-tertiary);
+        padding: 6px 0;
+        border-bottom: 1px solid var(--bg-secondary);
+      }
+      .pricing-features li:last-child {
+        border-bottom: none;
+      }
+      .pricing-features li svg {
+        color: var(--green);
+        flex-shrink: 0;
+        margin-top: 1px;
+      }
+      .pricing-btn {
+        display: block;
+        text-align: center;
+        padding: 12px;
+        border-radius: 10px;
+        font-family: var(--font-display);
+        font-weight: 700;
+        font-size: 13px;
+        text-decoration: none;
+        transition: all 0.3s;
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+      }
+      .pricing-btn-outline {
+        border: 2px solid var(--border);
+        color: var(--text-secondary);
+        background: transparent;
+      }
+      .pricing-btn-outline:hover {
+        border-color: var(--accent);
+        color: var(--accent);
+      }
+      .pricing-btn-fill {
+        background: var(--blue-gradient);
+        color: white;
+        border: 2px solid transparent;
+      }
+      .pricing-btn-fill:hover {
+        box-shadow: 0 4px 16px rgba(27, 58, 107, 0.25);
+      }
+      .pricing-btn-special {
+        border: 2px solid var(--accent);
+        color: var(--accent);
+        background: transparent;
+      }
+      .pricing-btn-special:hover {
+        background: var(--accent-glow);
+      }
+
+      /* ===== CONTACT ===== */
+      .contact-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 48px;
+      }
+      .contact-info-cards {
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+        margin: 24px 0;
+      }
+      .contact-info-card {
+        display: flex;
+        align-items: center;
+        gap: 14px;
+        padding: 16px 18px;
+        background: var(--bg-secondary);
+        border: 1px solid var(--border);
+        border-radius: 12px;
+        transition: all 0.3s;
+      }
+      .contact-info-card:hover {
+        box-shadow: var(--shadow-sm);
+      }
+      .contact-info-icon {
+        width: 42px;
+        height: 42px;
+        border-radius: 10px;
+        background: var(--accent-glow);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: var(--accent);
+        flex-shrink: 0;
+      }
+      .contact-info-label {
+        font-family: var(--font-mono);
+        font-size: 10px;
+        letter-spacing: 2px;
+        text-transform: uppercase;
+        color: var(--text-muted);
+        margin-bottom: 1px;
+        font-weight: 700;
+      }
+      .contact-info-value {
+        font-family: var(--font-display);
+        font-size: 14px;
+        font-weight: 600;
+        color: var(--text-primary);
+      }
+      .contact-form-wrapper {
+        background: var(--bg-secondary);
+        border: 1px solid var(--border);
+        border-radius: 16px;
+        padding: 32px;
+      }
+      .contact-form-title {
+        font-family: var(--font-display);
+        font-size: 18px;
+        font-weight: 700;
+        color: var(--text-primary);
+        margin-bottom: 20px;
+      }
+      .form-group {
+        margin-bottom: 16px;
+      }
+      .form-label {
+        display: block;
+        font-family: var(--font-mono);
+        font-size: 10px;
+        letter-spacing: 2px;
+        text-transform: uppercase;
+        color: var(--text-muted);
+        margin-bottom: 5px;
+        font-weight: 700;
+      }
+      .form-input,
+      .form-select,
+      .form-textarea {
+        width: 100%;
+        padding: 11px 13px;
+        background: var(--bg-card);
+        border: 1px solid var(--border);
+        border-radius: 9px;
+        color: var(--text-primary);
+        font-family: var(--font-body);
+        font-size: 13px;
+        transition: border-color 0.2s;
+        outline: none;
+      }
+      .form-input:focus,
+      .form-select:focus,
+      .form-textarea:focus {
+        border-color: var(--accent-bright);
+        box-shadow: 0 0 0 3px rgba(59, 125, 221, 0.08);
+      }
+      .form-input::placeholder,
+      .form-textarea::placeholder {
+        color: var(--text-muted);
+      }
+      .form-textarea {
+        min-height: 80px;
+        resize: vertical;
+      }
+      .form-select {
+        appearance: none;
+        cursor: pointer;
+      }
+      .form-row {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 12px;
+      }
+      .form-submit {
+        width: 100%;
+        padding: 13px;
+        background: var(--blue-gradient);
+        color: white;
+        border: none;
+        border-radius: 10px;
+        font-family: var(--font-display);
+        font-weight: 700;
+        font-size: 14px;
+        cursor: pointer;
+        transition: all 0.3s;
+        box-shadow: 0 4px 12px rgba(27, 58, 107, 0.2);
+      }
+      .form-submit:hover {
+        box-shadow: 0 6px 20px rgba(27, 58, 107, 0.3);
+        transform: translateY(-1px);
+      }
+
+      /* ===== FOOTER ===== */
+      footer {
+        background: var(--text-primary);
+        padding: 48px 0 28px;
+        color: #94a3b8;
+      }
+      footer .logo {
+        color: white;
+      }
+      .footer-grid {
+        display: grid;
+        grid-template-columns: 2fr 1fr 1fr 1fr;
+        gap: 40px;
+        margin-bottom: 40px;
+      }
+      .footer-brand p {
+        font-size: 13px;
+        color: #64748b;
+        margin-top: 12px;
+        line-height: 1.6;
+        max-width: 240px;
+      }
+      .footer-col h4 {
+        font-family: var(--font-display);
+        font-size: 13px;
+        font-weight: 700;
+        color: white;
+        margin-bottom: 14px;
+      }
+      .footer-col a {
+        display: block;
+        color: #64748b;
+        text-decoration: none;
+        font-size: 13px;
+        padding: 2px 0;
+        transition: color 0.2s;
+      }
+      .footer-col a:hover {
+        color: white;
+      }
+      .footer-bottom {
+        border-top: 1px solid #1e293b;
+        padding-top: 20px;
+        display: flex;
+        justify-content: space-between;
+        font-size: 12px;
+        color: #475569;
+      }
+      .footer-standards {
+        border-top: 1px solid rgba(255, 255, 255, 0.05);
+        padding: 40px 0;
+        margin-top: 20px;
+        display: flex;
+        justify-content: center;
+        align-items: flex-start;
+        flex-wrap: wrap;
+        gap: 60px;
+      }
+      .standard-item {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 16px;
+        text-align: center;
+      }
+      .standard-label {
+        font-size: 11px;
+        font-weight: 700;
+        color: #475569;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+      }
+      .standard-logo {
+        opacity: 0.5;
+        transition: opacity 0.3s;
+        color: #94a3b8;
+      }
+      .standard-item:hover .standard-logo {
+        opacity: 0.8;
+      }
+
+      /* ===== WHATSAPP FAB ===== */
+      .whatsapp-fab {
+        position: fixed;
+        bottom: 24px;
+        right: 24px;
+        width: 56px;
+        height: 56px;
+        background: #25d366;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        box-shadow: 0 4px 20px rgba(37, 211, 102, 0.35);
+        z-index: 999;
+        text-decoration: none;
+        transition: all 0.3s;
+      }
+      .whatsapp-fab:hover {
+        transform: scale(1.1);
+        box-shadow: 0 6px 28px rgba(37, 211, 102, 0.5);
+      }
+      .whatsapp-fab svg {
+        width: 26px;
+        height: 26px;
+        fill: white;
+      }
+
+      @keyframes fadeInUp {
+        from {
+          opacity: 0;
+          transform: translateY(20px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+      .animate {
+        animation: fadeInUp 0.5s ease forwards;
+        opacity: 0;
+      }
+      .delay-1 {
+        animation-delay: 0.1s;
+      }
+      .delay-2 {
+        animation-delay: 0.2s;
+      }
+      .delay-3 {
+        animation-delay: 0.3s;
+      }
+      .cta-banner {
+        text-align: center;
+        max-width: 600px;
+        margin: 0 auto;
+      }
+
+      /* ===== CHECK SVG shorthand ===== */
+      .ck {
+        color: var(--green);
+        flex-shrink: 0;
+        margin-top: 1px;
+      }
+
+      @media (max-width: 1024px) {
+        .pain-grid {
+          grid-template-columns: repeat(2, 1fr);
+        }
+        .pricing-grid {
+          grid-template-columns: repeat(2, 1fr);
+        }
+        .about-grid {
+          grid-template-columns: 1fr;
+        }
+        .contact-grid {
+          grid-template-columns: 1fr;
+        }
+        .footer-grid {
+          grid-template-columns: repeat(2, 1fr);
+        }
+      }
+      @media (max-width: 768px) {
+        .section {
+          padding: 48px 0;
+        }
+        nav,
+        .nav-cta {
+          display: none;
+        }
+        .mobile-toggle {
+          display: block;
+        }
+        nav.active {
+          display: flex !important;
+          flex-direction: column;
+          position: absolute;
+          top: 100%;
+          left: 0;
+          width: 100%;
+          background: white;
+          padding: 20px;
+          box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+          border-top: 1px solid var(--border);
+          gap: 15px;
+          z-index: 100;
+        }
+        nav.active .dropdown-content {
+          position: static;
+          visibility: visible;
+          opacity: 1;
+          transform: none;
+          min-width: 100%;
+          box-shadow: none;
+          border: none;
+          padding: 0 0 0 15px;
+          display: none !important; /* Collapsed by default on mobile */
+          flex-direction: column;
+          gap: 10px;
+          pointer-events: auto;
+        }
+        nav.active .nav-item-dropdown.open .dropdown-content {
+          display: flex !important;
+        }
+        nav.active .nav-item-dropdown.open > a svg {
+          transform: rotate(180deg);
+        }
+        nav.active .dropdown-card {
+          padding: 8px 0;
+        }
+        nav.active .dropdown-card h4 {
+          font-size: 13px;
+          margin-bottom: 2px;
+        }
+        nav.active .dropdown-card p,
+        nav.active .dropdown-card ul,
+        nav.active .dropdown-card .result {
+          display: none;
+        }
+        .topbar-right {
+          display: none;
+        }
+        .stats-bar {
+          gap: 24px;
+          flex-wrap: wrap;
+        }
+        .pain-grid,
+        .how-grid {
+          grid-template-columns: 1fr;
+        }
+        .how-grid::before {
+          display: none;
+        }
+        .pricing-grid {
+          grid-template-columns: 1fr;
+          max-width: 340px;
+          margin: 0 auto;
+        }
+        .partners-grid {
+          grid-template-columns: repeat(2, 1fr);
+        }
+        .footer-grid {
+          grid-template-columns: 1fr;
+        }
+        .form-row {
+          grid-template-columns: 1fr;
+        }
+        .footer-bottom {
+          flex-direction: column;
+          gap: 6px;
+        }
+        .marquee-container {
+          display: none;
+        }
+        .carousel-btn {
+          width: 36px;
+          height: 36px;
+        }
+        .carousel-prev {
+          left: 12px;
+        }
+        .carousel-next {
+          right: 12px;
+        }
+        .carousel-slide img {
+          height: 50vh;
+          min-height: 300px;
+        }
+      }
+
+      /* ===== SIDE CONTACT BUTTON ===== */
+      .side-contact-btn {
+        position: fixed;
+        right: 0;
+        top: 50%;
+        transform: rotate(-90deg);
+        transform-origin: bottom right;
+        z-index: 998;
+        background: var(--blue-gradient);
+        color: white;
+        padding: 12px 24px;
+        border-radius: 12px 12px 0 0;
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        text-decoration: none;
+        font-family: var(--font-display);
+        font-weight: 700;
+        font-size: 14px;
+        box-shadow: 0 4px 16px rgba(27, 58, 107, 0.25);
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        white-space: nowrap;
+      }
+      .side-contact-btn:hover {
+        transform: rotate(-90deg);
+        box-shadow: 0 8px 24px rgba(27, 58, 107, 0.35);
+      }
+      .side-contact-btn svg {
+        transform: rotate(90deg);
+        width: 18px;
+        height: 18px;
+        fill: white;
+      }
+
+      /* ===== MODAL CONTACT ===== */
+      .modal {
+        display: none;
+        position: fixed;
+        z-index: 2000;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(15, 23, 42, 0.6);
+        backdrop-filter: blur(8px);
+        align-items: center;
+        justify-content: center;
+      }
+      .modal.active {
+        display: flex;
+      }
+      .modal-content {
+        background: white;
+        padding: 40px;
+        border-radius: 24px;
+        max-width: 450px;
+        width: 95%;
+        box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+        position: relative;
+        animation: modalFadeIn 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+      }
+      @keyframes modalFadeIn {
+        from {
+          opacity: 0;
+          transform: scale(0.95) translateY(10px);
+        }
+        to {
+          opacity: 1;
+          transform: scale(1) translateY(0);
+        }
+      }
+      .close-modal {
+        position: absolute;
+        right: 24px;
+        top: 18px;
+        font-size: 28px;
+        cursor: pointer;
+        color: var(--text-muted);
+        transition: color 0.2s;
+      }
+      .close-modal:hover {
+        color: var(--text-primary);
+      }
+      .modal-content h2 {
+        font-family: var(--font-display);
+        font-size: 22px;
+        font-weight: 800;
+        color: var(--text-primary);
+        margin-bottom: 24px;
+        line-height: 1.3;
+      }
+      .modal-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 24px;
+      }
+      .modal-item label {
+        display: block;
+        font-family: var(--font-mono);
+        text-transform: uppercase;
+        font-size: 10px;
+        letter-spacing: 1px;
+        color: var(--accent-bright);
+        font-weight: 700;
+        margin-bottom: 4px;
+      }
+      .modal-item a,
+      .modal-item span {
+        font-size: 14px;
+        font-weight: 600;
+        color: var(--text-primary);
+        text-decoration: none;
+        display: block;
+      }
+      .modal-item a:hover {
+        color: var(--accent);
+      }
+
+      /* ===== COOKIE CONSENT ===== */
+      .cookie-banner {
+        position: fixed;
+        bottom: 24px;
+        left: 50%;
+        transform: translateX(-50%) translateY(150%);
+        width: 90%;
+        max-width: 550px;
+        background: white;
+        padding: 24px;
+        border-radius: 16px;
+        box-shadow: 0 20px 50px rgba(0, 0, 0, 0.15);
+        z-index: 3000;
+        transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+        border: 1px solid var(--border);
+      }
+      .cookie-banner.active {
+        transform: translateX(-50%) translateY(0);
+      }
+      .cookie-container {
+        display: flex;
+        flex-direction: column;
+        gap: 16px;
+      }
+      .cookie-container p {
+        font-size: 13px;
+        color: var(--text-secondary);
+        line-height: 1.5;
+      }
+      .cookie-container a {
+        color: var(--accent);
+        font-weight: 700;
+        text-decoration: none;
+      }
+      .cookie-buttons {
+        display: flex;
+        gap: 12px;
+        justify-content: flex-end;
+      }
+      .cookie-btn-fill {
+        background: var(--blue-gradient);
+        color: white;
+        border: none;
+        padding: 9px 20px;
+        border-radius: 8px;
+        font-weight: 700;
+        font-size: 13px;
+        cursor: pointer;
+        transition: all 0.2s;
+      }
+      .cookie-btn-fill:hover {
+        box-shadow: 0 4px 12px rgba(27, 58, 107, 0.25);
+        transform: translateY(-1px);
+      }
+      .cookie-btn-outline {
+        background: transparent;
+        color: var(--text-tertiary);
+        border: 1px solid var(--border);
+        padding: 9px 20px;
+        border-radius: 8px;
+        font-weight: 600;
+        font-size: 13px;
+        cursor: pointer;
+        transition: all 0.2s;
+      }
+      .cookie-btn-outline:hover {
+        background: var(--bg-secondary);
+        color: var(--text-primary);
+      }
+      .cookie-revisit {
+        position: fixed;
+        bottom: 24px;
+        left: 24px;
+        z-index: 997;
+        display: none;
+      }
+      .cookie-revisit.active {
+        display: block;
+      }
+      .cookie-revisit button {
+        width: 42px;
+        height: 42px;
+        background: #0056a7;
+        border: none;
+        border-radius: 10px;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: white;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        transition: all 0.3s;
+      }
+      .cookie-revisit button:hover {
+        transform: scale(1.1);
+        background: var(--accent);
+      }
+      .cookie-revisit svg {
+        width: 22px;
+        height: 22px;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- TOPBAR -->
+    <div class="topbar">
+      <div class="container">
+        <div class="topbar-left">
+          <a href="#"
+            ><svg
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+            >
+              <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z" />
+              <circle cx="12" cy="10" r="3" /></svg
+            >São Paulo e Grande SP</a
+          >
+          <a href="tel:+551195213-6402"
+            ><svg
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+            >
+              <path
+                d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"
+              /></svg
+            >(11) 95213-6402</a
+          >
+        </div>
+        <div class="topbar-right">
+          <a href="mailto:contato@upport.com.br">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <rect x="2" y="4" width="20" height="16" rx="2" />
+              <path d="M22 7l-8.97 5.7a1.94 1.94 0 01-2.06 0L2 7" />
+            </svg>
+            contato@upport.com.br
+          </a>
+          <a href="https://instagram.com/upport.ti" target="_blank" rel="noopener">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <rect x="2" y="2" width="21" height="21" rx="5" ry="5"></rect>
+              <path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37z"></path>
+              <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+            </svg>
+            
+          </a>
+          <a href="https://crm.upport.com.br" class="btn-area-top" target="_blank">
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2" />
+              <circle cx="12" cy="7" r="4" />
+            </svg>
+            Área do Cliente
+          </a>
+          <button id="installApp" class="btn-area-top" style="display: none; background: var(--green); border-color: var(--green); margin-left: 8px; cursor: pointer;">
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4M7 10l5 5 5-5M12 15V3"/>
+            </svg>
+            Instalar App
+          </button>
+        </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- HEADER -->
+    <header>
+      <div class="container">
+        <div class="header-inner">
+          <a href="#" class="logo"
+            ><div class="logo-icon">Ü</div>
+            ÜPPORT</a
+          >
+          <nav>
+            <a href="#">Home</a>
+            <div class="nav-item-dropdown">
+              <a
+                href="#servicos"
+                style="display: flex; align-items: center; gap: 4px; padding: 0"
+                >Serviços
+                <svg
+                  width="12"
+                  height="12"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                >
+                  <polyline points="6 9 12 15 18 9"></polyline></svg
+              ></a>
+              <div class="dropdown-content">
+                <a href="#servicos" class="dropdown-card">
+                  <h4>Infraestrutura de TI</h4>
+                  <p>
+                    Garantimos uma base tecnológica sólida, organizada e
+                    preparada para suportar o crescimento da sua empresa sem
+                    falhas ou improvisos.
+                  </p>
+                  <ul>
+                    <li>
+                      <svg
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="2"
+                      >
+                        <polyline points="20 6 9 17 4 12"></polyline>
+                      </svg>
+                      Cabeamento estruturado profissional
+                    </li>
+                    <li>
+                      <svg
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="2"
+                      >
+                        <polyline points="20 6 9 17 4 12"></polyline>
+                      </svg>
+                      Organização e padronização de racks
+                    </li>
+                    <li>
+                      <svg
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="2"
+                      >
+                        <polyline points="20 6 9 17 4 12"></polyline>
+                      </svg>
+                      Instalação e otimização de redes e Wi-Fi
+                    </li>
+                    <li>
+                      <svg
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="2"
+                      >
+                        <polyline points="20 6 9 17 4 12"></polyline>
+                      </svg>
+                      Interligação de ambientes e setores
+                    </li>
+                    <li>
+                      <svg
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="2"
+                      >
+                        <polyline points="20 6 9 17 4 12"></polyline>
+                      </svg>
+                      Estrutura pronta para expansão
+                    </li>
+                  </ul>
+                  <div class="result">
+                    Estabilidade e performance no dia a dia
+                  </div>
+                </a>
+
+                <a href="#servicos" class="dropdown-card">
+                  <h4>Gestão e Suporte de TI</h4>
+                  <p>
+                    Assumimos sua operação de TI com monitoramento contínuo e
+                    atuação preventiva, evitando falhas antes que impactem sua
+                    empresa.
+                  </p>
+                  <ul>
+                    <li>
+                      <svg
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="2"
+                      >
+                        <polyline points="20 6 9 17 4 12"></polyline>
+                      </svg>
+                      Suporte técnico remoto e presencial
+                    </li>
+                    <li>
+                      <svg
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="2"
+                      >
+                        <polyline points="20 6 9 17 4 12"></polyline>
+                      </svg>
+                      Monitoramento de equipamentos e rede
+                    </li>
+                    <li>
+                      <svg
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="2"
+                      >
+                        <polyline points="20 6 9 17 4 12"></polyline>
+                      </svg>
+                      Manutenção preventiva
+                    </li>
+                    <li>
+                      <svg
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="2"
+                      >
+                        <polyline points="20 6 9 17 4 12"></polyline>
+                      </svg>
+                      Atendimento rápido e direto
+                    </li>
+                    <li>
+                      <svg
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="2"
+                      >
+                        <polyline points="20 6 9 17 4 12"></polyline>
+                      </svg>
+                      Gestão contínua da infraestrutura
+                    </li>
+                  </ul>
+                  <div class="result">Menos paradas, mais produtividade</div>
+                </a>
+
+                <a href="#servicos" class="dropdown-card">
+                  <h4>Conectividade e Redes</h4>
+                  <p>
+                    Projetamos e implementamos redes estáveis, rápidas e seguras
+                    para garantir comunicação eficiente dentro da sua empresa.
+                  </p>
+                  <ul>
+                    <li>
+                      <svg
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="2"
+                      >
+                        <polyline points="20 6 9 17 4 12"></polyline>
+                      </svg>
+                      Projetos de rede personalizados
+                    </li>
+                    <li>
+                      <svg
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="2"
+                      >
+                        <polyline points="20 6 9 17 4 12"></polyline>
+                      </svg>
+                      Instalação de Wi-Fi corporativo
+                    </li>
+                    <li>
+                      <svg
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="2"
+                      >
+                        <polyline points="20 6 9 17 4 12"></polyline>
+                      </svg>
+                      Otimização de sinal e desempenho
+                    </li>
+                    <li>
+                      <svg
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="2"
+                      >
+                        <polyline points="20 6 9 17 4 12"></polyline>
+                      </svg>
+                      Expansão de rede
+                    </li>
+                    <li>
+                      <svg
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="2"
+                      >
+                        <polyline points="20 6 9 17 4 12"></polyline>
+                      </svg>
+                      Diagnóstico de instabilidade e segurança de rede
+                    </li>
+                  </ul>
+                  <div class="result">Conexão em todos os ambientes</div>
+                </a>
+
+                <a href="#servicos" class="dropdown-card">
+                  <h4>Implantação e Padronização</h4>
+                  <p>
+                    Organizamos e configuramos toda sua estrutura tecnológica
+                    para funcionar de forma eficiente e sem falhas.
+                  </p>
+                  <ul>
+                    <li>
+                      <svg
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="2"
+                      >
+                        <polyline points="20 6 9 17 4 12"></polyline>
+                      </svg>
+                      Configuração de máquinas
+                    </li>
+                    <li>
+                      <svg
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="2"
+                      >
+                        <polyline points="20 6 9 17 4 12"></polyline>
+                      </svg>
+                      Padronização de sistemas
+                    </li>
+                    <li>
+                      <svg
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="2"
+                      >
+                        <polyline points="20 6 9 17 4 12"></polyline>
+                      </svg>
+                      Integração de equipamentos
+                    </li>
+                    <li>
+                      <svg
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="2"
+                      >
+                        <polyline points="20 6 9 17 4 12"></polyline>
+                      </svg>
+                      Organização de ambiente
+                    </li>
+                    <li>
+                      <svg
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="2"
+                      >
+                        <polyline points="20 6 9 17 4 12"></polyline>
+                      </svg>
+                      Otimização de desempenho
+                    </li>
+                  </ul>
+                  <div class="result">Operação fluida e sem travamentos</div>
+                </a>
+
+                <a href="#servicos" class="dropdown-card">
+                  <h4>Segurança da Informação</h4>
+                  <p>
+                    Protegemos seus dados, sistemas e operação contra falhas,
+                    ataques e riscos que podem parar sua empresa.
+                  </p>
+                  <ul>
+                    <li>
+                      <svg
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="2"
+                      >
+                        <polyline points="20 6 9 17 4 12"></polyline>
+                      </svg>
+                      Proteção de dados e rede
+                    </li>
+                    <li>
+                      <svg
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="2"
+                      >
+                        <polyline points="20 6 9 17 4 12"></polyline>
+                      </svg>
+                      Backup e recuperação de informações
+                    </li>
+                    <li>
+                      <svg
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="2"
+                      >
+                        <polyline points="20 6 9 17 4 12"></polyline>
+                      </svg>
+                      Controle de acessos
+                    </li>
+                    <li>
+                      <svg
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="2"
+                      >
+                        <polyline points="20 6 9 17 4 12"></polyline>
+                      </svg>
+                      Monitoramento de vulnerabilidades
+                    </li>
+                    <li>
+                      <svg
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="2"
+                      >
+                        <polyline points="20 6 9 17 4 12"></polyline>
+                      </svg>
+                      Boas práticas de segurança
+                    </li>
+                  </ul>
+                  <div class="result">Segurança e continuidade da operação</div>
+                </a>
+
+                <a href="#servicos" class="dropdown-card">
+                  <h4>CFTV e Monitoramento</h4>
+                  <p>
+                    Implementamos sistemas de segurança para proteger seu
+                    ambiente e garantir controle total da sua operação.
+                  </p>
+                  <ul>
+                    <li>
+                      <svg
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="2"
+                      >
+                        <polyline points="20 6 9 17 4 12"></polyline>
+                      </svg>
+                      Instalação de câmeras IP
+                    </li>
+                    <li>
+                      <svg
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="2"
+                      >
+                        <polyline points="20 6 9 17 4 12"></polyline>
+                      </svg>
+                      Monitoramento 24h
+                    </li>
+                    <li>
+                      <svg
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="2"
+                      >
+                        <polyline points="20 6 9 17 4 12"></polyline>
+                      </svg>
+                      Projetos personalizados
+                    </li>
+                    <li>
+                      <svg
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="2"
+                      >
+                        <polyline points="20 6 9 17 4 12"></polyline>
+                      </svg>
+                      Manutenção preventiva
+                    </li>
+                    <li>
+                      <svg
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="2"
+                      >
+                        <polyline points="20 6 9 17 4 12"></polyline>
+                      </svg>
+                      Acesso remoto às imagens
+                    </li>
+                  </ul>
+                  <div class="result">Mais controle do seu negócio</div>
+                </a>
+              </div>
+            </div>
+            <a href="#quem-somos">Quem Somos</a
+            ><a href="#como-funciona">Como Funciona</a
+            ><a href="#planos">Planos</a><a href="#contato">Contato</a>
+          </nav>
+          <div class="nav-cta">
+            <a href="#contato" class="btn-fale"
+              ><svg
+                width="14"
+                height="14"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+              >
+                <path
+                  d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"
+                /></svg
+              >Fale Agora!</a
+            >
+          </div>
+          <button class="mobile-toggle">
+            <span></span><span></span><span></span>
+          </button>
+        </div>
+      </div>
+    </header>
+
+    <!-- CAROUSEL -->
+    <div class="carousel" id="carousel">
+      <div class="carousel-track" id="carouselTrack">
+        <div class="carousel-slide">
+          <img
+            src="assets/premium_carousel_1_innovation.png"
+            alt="Tecnologia que Escala o Seu Negócio"
+          />
+        </div>
+        <div class="carousel-slide">
+          <img
+            src="assets/clean_carousel_2_cloud.png"
+            alt="Nuvem de Alta Performance"
+          />
+        </div>
+        <div class="carousel-slide">
+          <img
+            src="assets/clean_carousel_3_security.png"
+            alt="Proteção de Dados em Nível Global"
+          />
+        </div>
+        <div class="carousel-slide">
+          <img
+            src="assets/clean_carousel_4_support.png"
+            alt="Gestão de TI Proativa e Especializada"
+          />
+        </div>
+        <div class="carousel-slide">
+          <img
+            src="assets/clean_carousel_5_dev.png"
+            alt="Sistemas Robustos e Personalizados"
+          />
+        </div>
+        <div class="carousel-slide">
+          <img
+            src="assets/clean_carousel_6_partnership.png"
+            alt="Seu Parceiro em Tecnologia e Governança"
+          />
+        </div>
+      </div>
+      <button class="carousel-btn carousel-prev" onclick="moveCarousel(-1)">
+        <svg
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2"
+        >
+          <path d="M15 18l-6-6 6-6" />
+        </svg>
+      </button>
+      <button class="carousel-btn carousel-next" onclick="moveCarousel(1)">
+        <svg
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2"
+        >
+          <path d="M9 18l6-6-6-6" />
+        </svg>
+      </button>
+      <div class="carousel-dots" id="carouselDots"></div>
+    </div>
+
+    <!-- STATS BAR -->
+    <div class="stats-bar">
+      <div class="stat-item">
+        <div class="stat-value">&le; <span class="counter" data-target="2">0</span>h</div>
+        <div class="stat-label">Tempo de resposta</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-value"><span class="counter" data-target="100">0</span>%</div>
+        <div class="stat-label">Foco em PMEs</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-value">SP</div>
+        <div class="stat-label">São Paulo e Grande SP</div>
+      </div>
+    </div>
+
+    <!-- CTA -->
+    <section
+      class="section"
+      style="padding: 48px 0; border-bottom: 1px solid var(--border)"
+    >
+      <div class="container">
+        <div class="cta-banner">
+          <p class="section-label" style="justify-content: center">
+            A Proposta
+          </p>
+          <h2 class="section-title">
+            Sua empresa não pode parar por causa da TI.
+          </h2>
+          <p
+            class="section-subtitle"
+            style="text-align: center; margin: 0 auto 28px"
+          >
+            A Upport assume sua infraestrutura para garantir que tudo funcione,
+            sempre.
+          </p>
+          <div style="display: flex; gap: 16px; flex-wrap: wrap; justify-content: center;">
+            <a href="#contato" class="btn btn-primary">Falar com Consultor</a>
+            <button class="btn btn-outline" style="background: white;" onclick="Calendly.initPopupWidget({url: 'https://calendly.com/contato-upport'});return false;">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <rect x="3" y="4" width="18" height="18" rx="2" ry="2"/>
+                <line x1="16" y1="2" x2="16" y2="6"/>
+                <line x1="8" y1="2" x2="8" y2="6"/>
+                <line x1="3" y1="10" x2="21" y2="10"/>
+              </svg>
+              Agendar Reunião
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- PAIN POINTS -->
+    <section class="pain-section section" id="problemas">
+      <div class="container">
+        <div class="pain-header">
+          <p class="section-label">O Problema que Resolvemos</p>
+          <h2 class="section-title">Reconhece alguma dessas situações?</h2>
+        </div>
+        <div class="pain-grid">
+          <div class="pain-card animate">
+            <div class="pain-icon">
+              <svg
+                width="22"
+                height="22"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+              >
+                <rect x="2" y="3" width="20" height="14" rx="2" />
+                <path d="M8 21h8M12 17v4" />
+              </svg>
+            </div>
+            <h3>Computador travou na hora errada</h3>
+            <p>
+              Seu sistema para no momento mais crítico e você fica horas sem
+              saber quem chamar.
+            </p>
+          </div>
+          <div class="pain-card animate delay-1">
+            <div class="pain-icon">
+              <svg
+                width="22"
+                height="22"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+              >
+                <path
+                  d="M1 1l22 22M16.72 11.06A10.94 10.94 0 0119 12.55M5 12.55a10.94 10.94 0 015.17-2.39M10.71 5.05A16 16 0 0122.56 9M1.42 9a15.91 15.91 0 014.7-2.88M8.53 16.11a6 6 0 016.95 0M12 20h.01"
+                />
+              </svg>
+            </div>
+            <h3>Internet caiu, reunião perdida</h3>
+            <p>
+              A rede falha sem aviso. Tempo e dinheiro jogados fora enquanto
+              espera o técnico.
+            </p>
+          </div>
+          <div class="pain-card animate delay-2">
+            <div class="pain-icon">
+              <svg
+                width="22"
+                height="22"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+              >
+                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
+                <path d="M9.5 12.5L12 15l4-5" />
+              </svg>
+            </div>
+            <h3>Sem backup — dados em risco</h3>
+            <p>
+              Um HD falha ou vírus entra e anos de trabalho desaparecem. Sem
+              backup, não tem volta.
+            </p>
+          </div>
+          <div class="pain-card animate delay-3">
+            <div class="pain-icon">
+              <svg
+                width="22"
+                height="22"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+              >
+                <circle cx="12" cy="12" r="10" />
+                <path d="M12 8v4l3 3" />
+              </svg>
+            </div>
+            <h3>TI na mão de um "sobrinho"</h3>
+            <p>
+              Dependência de alguém informal, sem contrato, sem SLA e que some
+              quando você precisa.
+            </p>
+          </div>
+        </div>
+        <div class="pain-cta">
+          <a href="#contato" class="btn btn-primary">Quero resolver minha TI</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- COMO FUNCIONA -->
+    <section class="section" id="como-funciona">
+      <div class="container">
+        <div class="how-header">
+          <p class="section-label">Como Funciona</p>
+          <h2 class="section-title">O problema não é a tecnologia.</h2>
+          <p class="how-subtitle">
+            É depender de um suporte que não acompanha sua empresa.
+          </p>
+        </div>
+        <div class="how-grid">
+          <div class="how-card animate">
+            <div class="how-number">1</div>
+            <h3>Suporte que só resolve depois do problema</h3>
+            <p>
+              Sua empresa evolui, mas a estrutura continua a mesma e começa a
+              travar tudo.
+            </p>
+          </div>
+          <div class="how-card animate delay-1">
+            <div class="how-number">2</div>
+            <h3>Tecnologia que deveria ajudar, mas atrapalha</h3>
+            <p>
+              Fio bagunçado, rede confusa e risco de dar problema a qualquer
+              hora.
+            </p>
+          </div>
+          <div class="how-card animate delay-2">
+            <div class="how-number">3</div>
+            <h3>TI interna que pesa no bolso</h3>
+            <p>
+              Equipe, ferramentas e gestão elevam os custos sem garantir
+              estabilidade real.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SERVIÇOS -->
+    <section class="about-section section" id="servicos">
+      <div class="container">
+        <div class="about-grid">
+          <div class="about-text">
+            <p class="section-label">Soluções de TI para sua Empresa</p>
+            <h2 class="section-title">
+              Serviços e tecnologia que promovem desempenho
+            </h2>
+            <p><em>Sua empresa não pode parar. A gente garante isso.</em></p>
+            <p>
+              A Upport nasceu para resolver um problema comum nas empresas:
+              depender de suportes lentos, técnicos reativos e estruturas
+              desorganizadas que travam a operação.
+            </p>
+            <p>
+              Mais do que prestar serviço, atuamos como o time de TI dos nossos
+              clientes. Assumimos a responsabilidade pela infraestrutura,
+              organizamos o ambiente e garantimos que tudo funcione com
+              estabilidade no dia a dia.
+            </p>
+            <p>
+              Trabalhamos de forma simples, direta e sem burocracia. Atuamos de
+              forma preventiva, evitando falhas antes que elas impactem o seu
+              negócio.
+            </p>
+            <p>
+              <em
+                >Aqui, tecnologia não é dor de cabeça, é base para
+                crescimento.</em
+              >
+            </p>
+            <a href="#contato" class="btn btn-primary" style="margin-top: 16px"
+              ><svg
+                width="14"
+                height="14"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+              >
+                <path
+                  d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"
+                /></svg
+              >Consultores ONLINE</a
+            >
+          </div>
+          <div>
+            <div class="about-cards">
+              <div class="about-card">
+                <div class="about-card-icon">
+                  <svg
+                    width="20"
+                    height="20"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                  >
+                    <circle cx="12" cy="12" r="3" />
+                    <path
+                      d="M19.4 15a1.65 1.65 0 00.33 1.82l.06.06a2 2 0 01-2.83 2.83l-.06-.06a1.65 1.65 0 00-1.82-.33 1.65 1.65 0 00-1 1.51V21a2 2 0 01-4 0v-.09A1.65 1.65 0 009 19.4a1.65 1.65 0 00-1.82.33l-.06.06a2 2 0 01-2.83-2.83l.06-.06A1.65 1.65 0 004.68 15a1.65 1.65 0 00-1.51-1H3a2 2 0 010-4h.09A1.65 1.65 0 004.6 9a1.65 1.65 0 00-.33-1.82l-.06-.06a2 2 0 012.83-2.83l.06.06A1.65 1.65 0 009 4.68a1.65 1.65 0 001-1.51V3a2 2 0 014 0v.09a1.65 1.65 0 001 1.51 1.65 1.65 0 001.82-.33l.06-.06a2 2 0 012.83 2.83l-.06.06A1.65 1.65 0 0019.32 9a1.65 1.65 0 001.51 1H21a2 2 0 010 4h-.09a1.65 1.65 0 00-1.51 1z"
+                    />
+                  </svg>
+                </div>
+                <div>
+                  <h4>Consultoria</h4>
+                  <p>
+                    Especialistas em Infraestrutura e segurança para prevenir
+                    falhas em seus sistemas.
+                  </p>
+                </div>
+              </div>
+              <div class="about-card">
+                <div class="about-card-icon">
+                  <svg
+                    width="20"
+                    height="20"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                  >
+                    <rect x="2" y="3" width="20" height="14" rx="2" />
+                    <path d="M8 21h8M12 17v4" />
+                  </svg>
+                </div>
+                <div>
+                  <h4>Suporte</h4>
+                  <p>
+                    Equipe pronta para resolver os principais problemas da sua
+                    infraestrutura de TI.
+                  </p>
+                </div>
+              </div>
+              <div class="about-card">
+                <div class="about-card-icon">
+                  <svg
+                    width="20"
+                    height="20"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                  >
+                    <rect x="2" y="2" width="20" height="8" rx="2" />
+                    <rect x="2" y="14" width="20" height="8" rx="2" />
+                    <circle cx="6" cy="6" r="1" />
+                    <circle cx="6" cy="18" r="1" />
+                  </svg>
+                </div>
+                <div>
+                  <h4>Serviços NOC</h4>
+                  <p>
+                    Monitoramento completo dos seus sistemas, ativos de rede,
+                    servidores e links.
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div class="about-services-grid" style="margin-top: 16px">
+              <div class="about-service-tag">
+                <svg
+                  width="14"
+                  height="14"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                >
+                  <path d="M22 11.08V12a10 10 0 11-5.93-9.14" />
+                  <path d="M22 4L12 14.01l-3-3" /></svg
+                >Consultoria De TI
+              </div>
+              <div class="about-service-tag">
+                <svg
+                  width="14"
+                  height="14"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                >
+                  <path d="M22 11.08V12a10 10 0 11-5.93-9.14" />
+                  <path d="M22 4L12 14.01l-3-3" /></svg
+                >Serviços De NOC
+              </div>
+              <div class="about-service-tag">
+                <svg
+                  width="14"
+                  height="14"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                >
+                  <path d="M22 11.08V12a10 10 0 11-5.93-9.14" />
+                  <path d="M22 4L12 14.01l-3-3" /></svg
+                >Manutenção E Suporte
+              </div>
+              <div class="about-service-tag">
+                <svg
+                  width="14"
+                  height="14"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                >
+                  <path d="M22 11.08V12a10 10 0 11-5.93-9.14" />
+                  <path d="M22 4L12 14.01l-3-3" /></svg
+                >Serviços De SOC
+              </div>
+              <div class="about-service-tag">
+                <svg
+                  width="14"
+                  height="14"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                >
+                  <path d="M22 11.08V12a10 10 0 11-5.93-9.14" />
+                  <path d="M22 4L12 14.01l-3-3" /></svg
+                >Gerenciamento De Ativos
+              </div>
+              <div class="about-service-tag">
+                <svg
+                  width="14"
+                  height="14"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                >
+                  <path d="M22 11.08V12a10 10 0 11-5.93-9.14" />
+                  <path d="M22 4L12 14.01l-3-3" /></svg
+                >Redes E Infraestrutura
+              </div>
+              <div class="about-service-tag">
+                <svg
+                  width="14"
+                  height="14"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                >
+                  <path d="M22 11.08V12a10 10 0 11-5.93-9.14" />
+                  <path d="M22 4L12 14.01l-3-3" /></svg
+                >Governança De TI
+              </div>
+              <div class="about-service-tag">
+                <svg
+                  width="14"
+                  height="14"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                >
+                  <path d="M22 11.08V12a10 10 0 11-5.93-9.14" />
+                  <path d="M22 4L12 14.01l-3-3" /></svg
+                >CFTV e Monitoramento
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- QUEM SOMOS -->
+    <section
+      class="section"
+      id="quem-somos"
+      style="background: var(--bg-primary)"
+    >
+      <div class="container">
+        <div class="about-grid" style="margin-bottom: 48px">
+          <div class="about-text">
+            <p class="section-label">Quem Somos</p>
+            <h2 class="section-title">
+              A tecnologia como aliada real no crescimento da sua empresa
+            </h2>
+            <p>
+              A Upport nasceu com um propósito simples: tornar a tecnologia uma
+              aliada real no crescimento das empresas.
+            </p>
+            <p>
+              Somos uma empresa especializada em infraestrutura de TI, suporte
+              técnico, monitoramento, segurança, redes e organização de
+              ambientes tecnológicos. Atuamos lado a lado com cada cliente para
+              criar uma estrutura estável, segura e preparada para acompanhar a
+              evolução do negócio.
+            </p>
+            <p>
+              Mais do que resolver problemas, buscamos prevenir falhas, otimizar
+              processos e oferecer tranquilidade para que nossos clientes possam
+              focar no que realmente importa: fazer a empresa crescer.
+            </p>
+            <p>
+              Trabalhamos com atendimento próximo, linguagem clara e soluções
+              sob medida. Cada empresa possui uma realidade diferente, por isso
+              analisamos as necessidades de cada cliente antes de propor
+              qualquer solução.
+            </p>
+
+            <div
+              style="
+                margin-top: 32px;
+                padding-top: 32px;
+                border-top: 1px solid var(--border);
+              "
+            >
+              <h3
+                style="
+                  font-family: var(--font-display);
+                  font-size: 18px;
+                  font-weight: 700;
+                  color: var(--text-primary);
+                  margin-bottom: 12px;
+                "
+              >
+                Nosso diferencial
+              </h3>
+              <p>
+                Na Upport, acreditamos que tecnologia não deve ser complicada.
+                Nosso compromisso é oferecer um atendimento rápido, transparente
+                e eficiente, sempre buscando soluções práticas e confiáveis, com
+                foco em resolver problemas de forma ágil e definitiva.
+                Valorizamos o relacionamento com nossos clientes e trabalhamos
+                para construir parcerias de longo prazo, baseadas em confiança,
+                responsabilidade e resultado.
+              </p>
+              <p>
+                Valorizamos o relacionamento com nossos clientes e trabalhamos
+                para construir parcerias de longo prazo, baseadas em confiança,
+                responsabilidade e resultado.
+              </p>
+            </div>
+
+            <a href="#contato" class="btn btn-primary" style="margin-top: 24px"
+              ><svg
+                width="14"
+                height="14"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+              >
+                <path
+                  d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"
+                /></svg
+              >Fale com a Upport</a
+            >
+          </div>
+
+          <div id="servicos">
+            <div
+              style="
+                background: var(--bg-card);
+                border: 1px solid var(--border);
+                border-radius: 16px;
+                padding: 32px;
+                box-shadow: var(--shadow-sm);
+              "
+            >
+              <h3
+                style="
+                  font-family: var(--font-display);
+                  font-size: 20px;
+                  font-weight: 800;
+                  color: var(--text-primary);
+                  margin-bottom: 24px;
+                  display: flex;
+                  align-items: center;
+                  gap: 10px;
+                "
+              >
+                <div
+                  style="
+                    width: 32px;
+                    height: 32px;
+                    border-radius: 8px;
+                    background: var(--accent-glow);
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    color: var(--accent);
+                  "
+                >
+                  <svg
+                    width="16"
+                    height="16"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                  >
+                    <polyline
+                      points="22 12 18 12 15 21 9 3 6 12 2 12"
+                    ></polyline>
+                  </svg>
+                </div>
+                O que fazemos
+              </h3>
+              <ul class="pricing-features" style="margin-bottom: 0">
+                <li>
+                  <svg
+                    viewBox="0 0 24 24"
+                    class="ck"
+                    width="16"
+                    height="16"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                  >
+                    <path d="M22 11.08V12a10 10 0 11-5.93-9.14" />
+                    <path d="M22 4L12 14.01l-3-3" />
+                  </svg>
+                  <span
+                    style="
+                      font-size: 14px;
+                      font-weight: 500;
+                      color: var(--text-secondary);
+                    "
+                    >Infraestrutura e organização de redes</span
+                  >
+                </li>
+                <li>
+                  <svg
+                    viewBox="0 0 24 24"
+                    class="ck"
+                    width="16"
+                    height="16"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                  >
+                    <path d="M22 11.08V12a10 10 0 11-5.93-9.14" />
+                    <path d="M22 4L12 14.01l-3-3" />
+                  </svg>
+                  <span
+                    style="
+                      font-size: 14px;
+                      font-weight: 500;
+                      color: var(--text-secondary);
+                    "
+                    >Configuração e manutenção de computadores e
+                    servidores</span
+                  >
+                </li>
+                <li>
+                  <svg
+                    viewBox="0 0 24 24"
+                    class="ck"
+                    width="16"
+                    height="16"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                  >
+                    <path d="M22 11.08V12a10 10 0 11-5.93-9.14" />
+                    <path d="M22 4L12 14.01l-3-3" />
+                  </svg>
+                  <span
+                    style="
+                      font-size: 14px;
+                      font-weight: 500;
+                      color: var(--text-secondary);
+                    "
+                    >Suporte técnico presencial e remoto</span
+                  >
+                </li>
+                <li>
+                  <svg
+                    viewBox="0 0 24 24"
+                    class="ck"
+                    width="16"
+                    height="16"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                  >
+                    <path d="M22 11.08V12a10 10 0 11-5.93-9.14" />
+                    <path d="M22 4L12 14.01l-3-3" />
+                  </svg>
+                  <span
+                    style="
+                      font-size: 14px;
+                      font-weight: 500;
+                      color: var(--text-secondary);
+                    "
+                    >Monitoramento e manutenção preventiva</span
+                  >
+                </li>
+                <li>
+                  <svg
+                    viewBox="0 0 24 24"
+                    class="ck"
+                    width="16"
+                    height="16"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                  >
+                    <path d="M22 11.08V12a10 10 0 11-5.93-9.14" />
+                    <path d="M22 4L12 14.01l-3-3" />
+                  </svg>
+                  <span
+                    style="
+                      font-size: 14px;
+                      font-weight: 500;
+                      color: var(--text-secondary);
+                    "
+                    >Segurança da informação e backups</span
+                  >
+                </li>
+                <li>
+                  <svg
+                    viewBox="0 0 24 24"
+                    class="ck"
+                    width="16"
+                    height="16"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                  >
+                    <path d="M22 11.08V12a10 10 0 11-5.93-9.14" />
+                    <path d="M22 4L12 14.01l-3-3" />
+                  </svg>
+                  <span
+                    style="
+                      font-size: 14px;
+                      font-weight: 500;
+                      color: var(--text-secondary);
+                    "
+                    >Estruturação de ambientes corporativos</span
+                  >
+                </li>
+                <li>
+                  <svg
+                    viewBox="0 0 24 24"
+                    class="ck"
+                    width="16"
+                    height="16"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                  >
+                    <path d="M22 11.08V12a10 10 0 11-5.93-9.14" />
+                    <path d="M22 4L12 14.01l-3-3" />
+                  </svg>
+                  <span
+                    style="
+                      font-size: 14px;
+                      font-weight: 500;
+                      color: var(--text-secondary);
+                    "
+                    >Implantação e organização de racks e switches</span
+                  >
+                </li>
+              </ul>
+            </div>
+
+            <style>
+              .equipe-img {
+                width: 100%;
+                height: auto;
+                border-radius: 16px;
+                margin-top: 24px;
+                object-fit: cover;
+                box-shadow: var(--shadow-sm);
+                transition:
+                  transform 0.4s ease,
+                  box-shadow 0.4s ease;
+                border: 1px solid var(--border);
+              }
+              .equipe-img:hover {
+                transform: translateY(-4px);
+                box-shadow: var(--shadow-lg);
+              }
+            </style>
+            <img
+              src="assets/equipe.png"
+              alt="Equipe Upport"
+              class="equipe-img"
+            />
+          </div>
+        </div>
+
+        <div
+          style="
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
+          "
+        >
+          <div class="pain-card">
+            <div
+              class="pain-icon"
+              style="color: var(--cyan); background: rgba(14, 165, 233, 0.1)"
+            >
+              <svg
+                width="22"
+                height="22"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+              >
+                <circle cx="12" cy="12" r="10" />
+                <path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20" />
+                <path d="M2 12h20" />
+              </svg>
+            </div>
+            <h3
+              style="
+                font-size: 16px;
+                margin-bottom: 12px;
+                font-family: var(--font-display);
+              "
+            >
+              Missão
+            </h3>
+            <p style="font-size: 13px">
+              Garantir que empresas tenham uma base tecnológica organizada,
+              segura e pronta para crescer. Atuamos de forma próxima e
+              estratégica, oferecendo soluções de TI que reduzem falhas,
+              aumentam a produtividade e trazem mais tranquilidade para o dia a
+              dia das empresas. Nosso compromisso é transformar a tecnologia em
+              uma ferramenta de apoio ao crescimento e à continuidade de cada
+              negócio.
+            </p>
+          </div>
+          <div class="pain-card">
+            <div
+              class="pain-icon"
+              style="
+                color: var(--accent-bright);
+                background: rgba(59, 125, 221, 0.1);
+              "
+            >
+              <svg
+                width="22"
+                height="22"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+              >
+                <path
+                  d="M2 12c0-3.87 3.13-7 7-7h6c3.87 0 7 3.13 7 7s-3.13 7-7 7H9c-3.87 0-7-3.13-7-7z"
+                />
+                <circle cx="9" cy="12" r="3" />
+                <circle cx="15" cy="12" r="3" />
+              </svg>
+            </div>
+            <h3
+              style="
+                font-size: 16px;
+                margin-bottom: 12px;
+                font-family: var(--font-display);
+              "
+            >
+              Visão
+            </h3>
+            <p style="font-size: 13px">
+              Ser referência em soluções de TI e suporte empresarial,
+              reconhecida pela qualidade do atendimento e pela confiança dos
+              clientes. Queremos construir relacionamentos duradouros e nos
+              tornar a principal parceira tecnológica das empresas, acompanhando
+              sua evolução e crescimento. Buscamos inovar constantemente,
+              mantendo um serviço próximo, eficiente e alinhado às necessidades
+              de cada cliente.
+            </p>
+          </div>
+          <div class="pain-card">
+            <div
+              class="pain-icon"
+              style="color: var(--green); background: rgba(16, 185, 129, 0.1)"
+            >
+              <svg
+                width="22"
+                height="22"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+              >
+                <polygon
+                  points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"
+                />
+              </svg>
+            </div>
+            <h3
+              style="
+                font-size: 16px;
+                margin-bottom: 16px;
+                font-family: var(--font-display);
+              "
+            >
+              Valores
+            </h3>
+            <ul style="list-style: none; padding: 0">
+              <li
+                style="
+                  font-size: 13px;
+                  color: var(--text-tertiary);
+                  margin-bottom: 8px;
+                  display: flex;
+                  align-items: start;
+                  gap: 8px;
+                "
+              >
+                <svg
+                  viewBox="0 0 24 24"
+                  class="ck"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  width="14"
+                  height="14"
+                  style="margin-top: 2px"
+                >
+                  <path d="M22 11.08V12a10 10 0 11-5.93-9.14" />
+                  <path d="M22 4L12 14.01l-3-3" />
+                </svg>
+                <span>Compromisso com o cliente</span>
+              </li>
+              <li
+                style="
+                  font-size: 13px;
+                  color: var(--text-tertiary);
+                  margin-bottom: 8px;
+                  display: flex;
+                  align-items: start;
+                  gap: 8px;
+                "
+              >
+                <svg
+                  viewBox="0 0 24 24"
+                  class="ck"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  width="14"
+                  height="14"
+                  style="margin-top: 2px"
+                >
+                  <path d="M22 11.08V12a10 10 0 11-5.93-9.14" />
+                  <path d="M22 4L12 14.01l-3-3" />
+                </svg>
+                <span>Transparência em cada atendimento</span>
+              </li>
+              <li
+                style="
+                  font-size: 13px;
+                  color: var(--text-tertiary);
+                  margin-bottom: 8px;
+                  display: flex;
+                  align-items: start;
+                  gap: 8px;
+                "
+              >
+                <svg
+                  viewBox="0 0 24 24"
+                  class="ck"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  width="14"
+                  height="14"
+                  style="margin-top: 2px"
+                >
+                  <path d="M22 11.08V12a10 10 0 11-5.93-9.14" />
+                  <path d="M22 4L12 14.01l-3-3" />
+                </svg>
+                <span>Agilidade na resolução de problemas</span>
+              </li>
+              <li
+                style="
+                  font-size: 13px;
+                  color: var(--text-tertiary);
+                  margin-bottom: 8px;
+                  display: flex;
+                  align-items: start;
+                  gap: 8px;
+                "
+              >
+                <svg
+                  viewBox="0 0 24 24"
+                  class="ck"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  width="14"
+                  height="14"
+                  style="margin-top: 2px"
+                >
+                  <path d="M22 11.08V12a10 10 0 11-5.93-9.14" />
+                  <path d="M22 4L12 14.01l-3-3" />
+                </svg>
+                <span>Organização e responsabilidade</span>
+              </li>
+              <li
+                style="
+                  font-size: 13px;
+                  color: var(--text-tertiary);
+                  margin-bottom: 8px;
+                  display: flex;
+                  align-items: start;
+                  gap: 8px;
+                "
+              >
+                <svg
+                  viewBox="0 0 24 24"
+                  class="ck"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  width="14"
+                  height="14"
+                  style="margin-top: 2px"
+                >
+                  <path d="M22 11.08V12a10 10 0 11-5.93-9.14" />
+                  <path d="M22 4L12 14.01l-3-3" />
+                </svg>
+                <span>Evolução constante</span>
+              </li>
+              <li
+                style="
+                  font-size: 13px;
+                  color: var(--text-tertiary);
+                  margin-bottom: 0;
+                  display: flex;
+                  align-items: start;
+                  gap: 8px;
+                "
+              >
+                <svg
+                  viewBox="0 0 24 24"
+                  class="ck"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  width="14"
+                  height="14"
+                  style="margin-top: 2px"
+                >
+                  <path d="M22 11.08V12a10 10 0 11-5.93-9.14" />
+                  <path d="M22 4L12 14.01l-3-3" />
+                </svg>
+                <span>Tecnologia a serviço das pessoas</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- PARTNERS -->
+    <section class="partners-section section">
+      <div class="container">
+        <p class="section-label" style="justify-content: center">
+          Ecossistema de Clientes
+        </p>
+        <h2 class="partners-title">Tecnologia de ponta, direto pra você.</h2>
+        <div class="partners-grid">
+          <div class="partner-cell">
+            <img
+              src="assets/logos/MikroTik-Logo-1-300x169-1.png"
+              alt="MikroTik"
+              class="partner-logo"
+            />
+          </div>
+          <div class="partner-cell">
+            <img
+              src="assets/logos/Ubiquiti_Networks-Logo.wine_-300x200-1.png"
+              alt="Ubiquiti"
+              class="partner-logo"
+            />
+          </div>
+          <div class="partner-cell">
+            <img
+              src="assets/logos/Acronis-Logo.wine_-300x200-1.png"
+              alt="Acronis"
+              class="partner-logo"
+            />
+          </div>
+          <div class="partner-cell">
+            <img
+              src="assets/logos/Bitdefender-Logo.wine_-300x200-1.png"
+              alt="Bitdefender"
+              class="partner-logo"
+            />
+          </div>
+          <div class="partner-cell">
+            <img
+              src="assets/logos/Dell-Logo.wine_-300x200-1.png"
+              alt="Dell"
+              class="partner-logo"
+            />
+          </div>
+          <div class="partner-cell">
+            <img
+              src="assets/logos/Fortinet-Logo.wine_-300x200-1.png"
+              alt="Fortinet"
+              class="partner-logo"
+            />
+          </div>
+          <div class="partner-cell">
+            <img
+              src="assets/logos/Microsoft-Logo.wine_-300x200-1.png"
+              alt="Microsoft"
+              class="partner-logo"
+            />
+          </div>
+          <div class="partner-cell">
+            <img
+              src="assets/logos/PfSense_logo.png"
+              alt="pfSense"
+              class="partner-logo"
+              style="max-height: 40px; max-width: 130px"
+            />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- PRICING -->
+    <section class="pricing-section section" id="planos">
+      <div class="container">
+        <div class="marquee-container">
+          <div class="marquee-track">
+            <span class="marquee-item">Security First</span
+            ><span class="marquee-item">Managed IT</span
+            ><span class="marquee-item">ÜPPORT</span
+            ><span class="marquee-item">High Performance</span
+            ><span class="marquee-item">Security First</span
+            ><span class="marquee-item">Managed IT</span
+            ><span class="marquee-item">ÜPPORT</span
+            ><span class="marquee-item">High Performance</span
+            ><span class="marquee-item">Security First</span
+            ><span class="marquee-item">Managed IT</span
+            ><span class="marquee-item">ÜPPORT</span
+            ><span class="marquee-item">High Performance</span>
+          </div>
+        </div>
+        <div class="pricing-header">
+          <h2 class="section-title">Transparência total.</h2>
+        </div>
+        <p class="pricing-sub">
+          Sem surpresas na fatura. Tudo incluso, sem cobranças ocultas.
+        </p>
+        <div class="pricing-grid">
+          <div class="pricing-card animate">
+            <div class="pricing-name">Standard</div>
+            <div class="pricing-price">R$799<span>/mês</span></div>
+            <div class="pricing-sla">Resposta em até 4h úteis</div>
+            <ul class="pricing-features">
+              <li>
+                <svg
+                  width="14"
+                  height="14"
+                  class="ck"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                >
+                  <path d="M22 11.08V12a10 10 0 11-5.93-9.14" />
+                  <path d="M22 4L12 14.01l-3-3" /></svg
+                >Suporte remoto ilimitado
+              </li>
+              <li>
+                <svg
+                  width="14"
+                  height="14"
+                  class="ck"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                >
+                  <path d="M22 11.08V12a10 10 0 11-5.93-9.14" />
+                  <path d="M22 4L12 14.01l-3-3" /></svg
+                >Instalação de softwares
+              </li>
+              <li>
+                <svg
+                  width="14"
+                  height="14"
+                  class="ck"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                >
+                  <path d="M22 11.08V12a10 10 0 11-5.93-9.14" />
+                  <path d="M22 4L12 14.01l-3-3" /></svg
+                >Suporte a e-mail e impressora
+              </li>
+              <li>
+                <svg
+                  width="14"
+                  height="14"
+                  class="ck"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                >
+                  <path d="M22 11.08V12a10 10 0 11-5.93-9.14" />
+                  <path d="M22 4L12 14.01l-3-3" /></svg
+                >Sistema de tickets
+              </li>
+              <li>
+                <svg
+                  width="14"
+                  height="14"
+                  class="ck"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="#9CA3AF"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                >
+                  <path d="M18 6L6 18" />
+                  <path d="M6 6L18 18" />
+                </svg>
+                ̶1̶ ̶v̶i̶s̶i̶t̶a̶ ̶p̶r̶e̶s̶e̶n̶c̶i̶a̶l̶/̶m̶ê̶s̶
+              </li>
+              <li>
+                <svg
+                  width="14"
+                  height="14"
+                  class="ck"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="#9CA3AF"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                >
+                  <path d="M18 6L6 18" />
+                  <path d="M6 6L18 18" />
+                </svg>
+                ̶M̶a̶n̶u̶t̶e̶n̶ç̶ã̶o̶ ̶p̶r̶e̶v̶e̶n̶t̶i̶v̶a̶
+              </li>
+              <li>
+                <svg
+                  width="14"
+                  height="14"
+                  class="ck"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="#9CA3AF"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                >
+                  <path d="M18 6L6 18" />
+                  <path d="M6 6L18 18" />
+                </svg>
+                ̶R̶e̶l̶a̶t̶ó̶r̶i̶o̶ ̶m̶e̶n̶s̶a̶l̶
+              </li>
+              <li>
+                <svg
+                  width="14"
+                  height="14"
+                  class="ck"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="#9CA3AF"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                >
+                  <path d="M18 6L6 18" />
+                  <path d="M6 6L18 18" />
+                </svg>
+                ̶L̶a̶n̶d̶i̶n̶g̶ ̶P̶a̶g̶e̶ ̶I̶n̶s̶t̶i̶t̶u̶c̶i̶o̶n̶a̶l̶
+              </li>
+            </ul>
+            <a href="#contato" class="pricing-btn pricing-btn-outline"
+              >Contratar Standard</a
+            >
+          </div>
+          <div
+            class="pricing-card popular animate delay-1"
+            style="position: relative"
+          >
+            <div class="pricing-badge">Mais Popular</div>
+            <div class="pricing-name">Business</div>
+            <div class="pricing-price">R$1.499<span>/mês</span></div>
+            <div class="pricing-sla">Resposta em até 2h úteis</div>
+            <ul class="pricing-features">
+              <li>
+                <svg
+                  width="14"
+                  height="14"
+                  class="ck"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                >
+                  <path d="M22 11.08V12a10 10 0 11-5.93-9.14" />
+                  <path d="M22 4L12 14.01l-3-3" /></svg
+                >Suporte remoto ilimitado
+              </li>
+              <li>
+                <svg
+                  width="14"
+                  height="14"
+                  class="ck"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                >
+                  <path d="M22 11.08V12a10 10 0 11-5.93-9.14" />
+                  <path d="M22 4L12 14.01l-3-3" /></svg
+                >Instalação de softwares
+              </li>
+              <li>
+                <svg
+                  width="14"
+                  height="14"
+                  class="ck"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                >
+                  <path d="M22 11.08V12a10 10 0 11-5.93-9.14" />
+                  <path d="M22 4L12 14.01l-3-3" /></svg
+                >Suporte a e-mail e impressora
+              </li>
+              <li>
+                <svg
+                  width="14"
+                  height="14"
+                  class="ck"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                >
+                  <path d="M22 11.08V12a10 10 0 11-5.93-9.14" />
+                  <path d="M22 4L12 14.01l-3-3" /></svg
+                >Sistema de tickets
+              </li>
+              <li>
+                <svg
+                  width="14"
+                  height="14"
+                  class="ck"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                >
+                  <path d="M22 11.08V12a10 10 0 11-5.93-9.14" />
+                  <path d="M22 4L12 14.01l-3-3" /></svg
+                >1 visita presencial/mês
+              </li>
+              <li>
+                <svg
+                  width="14"
+                  height="14"
+                  class="ck"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                >
+                  <path d="M22 11.08V12a10 10 0 11-5.93-9.14" />
+                  <path d="M22 4L12 14.01l-3-3" /></svg
+                >Manutenção preventiva
+              </li>
+              <li>
+                <svg
+                  width="14"
+                  height="14"
+                  class="ck"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                >
+                  <path d="M22 11.08V12a10 10 0 11-5.93-9.14" />
+                  <path d="M22 4L12 14.01l-3-3" /></svg
+                >Relatório mensal
+              </li>
+              <li>
+                <svg
+                  width="14"
+                  height="14"
+                  class="ck"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                >
+                  <path d="M22 11.08V12a10 10 0 11-5.93-9.14" />
+                  <path d="M22 4L12 14.01l-3-3" /></svg
+                >Landing Page Institucional
+              </li>
+            </ul>
+            <a href="#contato" class="pricing-btn pricing-btn-fill"
+              >Contratar Business</a
+            >
+          </div>
+          <div class="pricing-card animate delay-2">
+            <div class="pricing-name">Premium</div>
+            <div class="pricing-price">R$2.199<span>/mês</span></div>
+            <div class="pricing-sla">Resposta em até 1h útil</div>
+            <ul class="pricing-features">
+              <li>
+                <svg
+                  width="14"
+                  height="14"
+                  class="ck"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                >
+                  <path d="M22 11.08V12a10 10 0 11-5.93-9.14" />
+                  <path d="M22 4L12 14.01l-3-3" /></svg
+                >Suporte remoto ilimitado
+              </li>
+              <li>
+                <svg
+                  width="14"
+                  height="14"
+                  class="ck"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                >
+                  <path d="M22 11.08V12a10 10 0 11-5.93-9.14" />
+                  <path d="M22 4L12 14.01l-3-3" /></svg
+                >Instalação de softwares
+              </li>
+              <li>
+                <svg
+                  width="14"
+                  height="14"
+                  class="ck"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                >
+                  <path d="M22 11.08V12a10 10 0 11-5.93-9.14" />
+                  <path d="M22 4L12 14.01l-3-3" /></svg
+                >Suporte a e-mail e impressora
+              </li>
+              <li>
+                <svg
+                  width="14"
+                  height="14"
+                  class="ck"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                >
+                  <path d="M22 11.08V12a10 10 0 11-5.93-9.14" />
+                  <path d="M22 4L12 14.01l-3-3" /></svg
+                >Sistema de tickets
+              </li>
+              <li>
+                <svg
+                  width="14"
+                  height="14"
+                  class="ck"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                >
+                  <path d="M22 11.08V12a10 10 0 11-5.93-9.14" />
+                  <path d="M22 4L12 14.01l-3-3" /></svg
+                >Visitas presenciais sob demanda
+              </li>
+              <li>
+                <svg
+                  width="14"
+                  height="14"
+                  class="ck"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                >
+                  <path d="M22 11.08V12a10 10 0 11-5.93-9.14" />
+                  <path d="M22 4L12 14.01l-3-3" /></svg
+                >Manutenção preventiva
+              </li>
+              <li>
+                <svg
+                  width="14"
+                  height="14"
+                  class="ck"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                >
+                  <path d="M22 11.08V12a10 10 0 11-5.93-9.14" />
+                  <path d="M22 4L12 14.01l-3-3" /></svg
+                >Relatório mensal de TI
+              </li>
+              <li>
+                <svg
+                  width="14"
+                  height="14"
+                  class="ck"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                >
+                  <path d="M22 11.08V12a10 10 0 11-5.93-9.14" />
+                  <path d="M22 4L12 14.01l-3-3" /></svg
+                >Landing Page Avançada
+              </li>
+            </ul>
+            <a href="#contato" class="pricing-btn pricing-btn-outline"
+              >Contratar Premium</a
+            >
+          </div>
+          <div class="pricing-card animate delay-3">
+            <div class="pricing-name">Enterprise</div>
+            <div class="pricing-price" style="font-size: 24px">
+              Sob Consulta
+            </div>
+            <div class="pricing-sla">SLA Dedicado</div>
+            <ul class="pricing-features">
+              <li>
+                <svg
+                  width="14"
+                  height="14"
+                  class="ck"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                >
+                  <path d="M22 11.08V12a10 10 0 11-5.93-9.14" />
+                  <path d="M22 4L12 14.01l-3-3" /></svg
+                >Centros SOC e NOC
+              </li>
+              <li>
+                <svg
+                  width="14"
+                  height="14"
+                  class="ck"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                >
+                  <path d="M22 11.08V12a10 10 0 11-5.93-9.14" />
+                  <path d="M22 4L12 14.01l-3-3" /></svg
+                >Infraestrutura Completa
+              </li>
+              <li>
+                <svg
+                  width="14"
+                  height="14"
+                  class="ck"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                >
+                  <path d="M22 11.08V12a10 10 0 11-5.93-9.14" />
+                  <path d="M22 4L12 14.01l-3-3" /></svg
+                >Segurança Avançada
+              </li>
+              <li>
+                <svg
+                  width="14"
+                  height="14"
+                  class="ck"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                >
+                  <path d="M22 11.08V12a10 10 0 11-5.93-9.14" />
+                  <path d="M22 4L12 14.01l-3-3" /></svg
+                >Monitoramento 24/7
+              </li>
+              <li>
+                <svg
+                  width="14"
+                  height="14"
+                  class="ck"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                >
+                  <path d="M22 11.08V12a10 10 0 11-5.93-9.14" />
+                  <path d="M22 4L12 14.01l-3-3" /></svg
+                >Suporte Presencial Frequente
+              </li>
+              <li>
+                <svg
+                  width="14"
+                  height="14"
+                  class="ck"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                >
+                  <path d="M22 11.08V12a10 10 0 11-5.93-9.14" />
+                  <path d="M22 4L12 14.01l-3-3" /></svg
+                >Hardware as a Service
+              </li>
+              <li>
+                <svg
+                  width="14"
+                  height="14"
+                  class="ck"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                >
+                  <path d="M22 11.08V12a10 10 0 11-5.93-9.14" />
+                  <path d="M22 4L12 14.01l-3-3" /></svg
+                >Auditorias Frequentes
+              </li>
+            </ul>
+            <a href="#contato" class="pricing-btn pricing-btn-special"
+              >Conhecer Enterprise</a
+            >
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section class="section" id="contato">
+      <div class="container">
+        <div class="contact-grid">
+          <div>
+            <p class="section-label">Fale Conosco</p>
+            <h2 class="section-title">Pronto para ter uma TI que funciona?</h2>
+            <div class="contact-info-cards">
+              <div class="contact-info-card">
+                <div class="contact-info-icon">
+                  <svg
+                    width="18"
+                    height="18"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                  >
+                    <path
+                      d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"
+                    />
+                  </svg>
+                </div>
+                <div>
+                  <div class="contact-info-label">WhatsApp</div>
+                  <div class="contact-info-value">(11) 95213-6402</div>
+                </div>
+              </div>
+              <div class="contact-info-card">
+                <div class="contact-info-icon">
+                  <svg
+                    width="18"
+                    height="18"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                  >
+                    <rect x="2" y="4" width="20" height="16" rx="2" />
+                    <path d="M22 7l-8.97 5.7a1.94 1.94 0 01-2.06 0L2 7" />
+                  </svg>
+                </div>
+                <div>
+                  <div class="contact-info-label">E-mail</div>
+                  <div class="contact-info-value">contato@upport.com.br</div>
+                </div>
+              </div>
+              <div class="contact-info-card">
+                <div class="contact-info-icon">
+                  <svg
+                    width="18"
+                    height="18"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                  >
+                    <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z" />
+                    <circle cx="12" cy="10" r="3" />
+                  </svg>
+                </div>
+                <div>
+                  <div class="contact-info-label">Atendimento</div>
+                  <div class="contact-info-value">São Paulo e Grande SP</div>
+                </div>
+              </div>
+              <div class="contact-info-card">
+                <div class="contact-info-icon">
+                  <svg
+                    width="18"
+                    height="18"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                  >
+                    <circle cx="12" cy="12" r="10" />
+                    <path d="M12 6v6l4 2" />
+                  </svg>
+                </div>
+                <div>
+                  <div class="contact-info-label">Horário</div>
+                  <div class="contact-info-value">Seg–Sex, 08h às 18h</div>
+                </div>
+              </div>
+            </div>
+            <a
+              href="https://wa.me/5511952136402"
+              class="btn btn-green"
+              style="width: 100%; justify-content: center"
+              ><svg
+                width="18"
+                height="18"
+                viewBox="0 0 24 24"
+                fill="currentColor"
+              >
+                <path
+                  d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"
+                />
+                <path
+                  d="M12 0C5.373 0 0 5.373 0 12c0 2.625.846 5.059 2.284 7.034L.789 23.492a.5.5 0 00.611.611l4.458-1.495A11.952 11.952 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 22c-2.352 0-4.55-.752-6.338-2.034l-.442-.332-3.088 1.035 1.035-3.088-.332-.442A9.96 9.96 0 012 12C2 6.477 6.477 2 12 2s10 4.477 10 10-4.477 10-10 10z"
+                /></svg
+              >Solicitar Proposta pelo WhatsApp</a
+            >
+          </div>
+          <div class="contact-form-wrapper">
+            <h3 class="contact-form-title">Ou envie uma mensagem</h3>
+            <form action="https://formsubmit.co/contato@upport.com.br" method="POST" class="contact-form-content">
+              <!-- FormSubmit Configuration -->
+              <input type="hidden" name="_subject" value="Novo Lead: Üpport Landing Page">
+              <input type="hidden" name="_template" value="table">
+              <input type="hidden" name="_captcha" value="false">
+
+              <div class="form-group">
+                <label class="form-label">Seu Nome</label>
+                <input
+                  type="text"
+                  name="nome"
+                  class="form-input"
+                  placeholder="Nome completo"
+                  required
+                />
+              </div>
+              <div class="form-row">
+                <div class="form-group">
+                  <label class="form-label">Empresa</label>
+                  <input
+                    type="text"
+                    name="empresa"
+                    class="form-input"
+                    placeholder="Nome da sua empresa"
+                    required
+                  />
+                </div>
+                <div class="form-group">
+                  <label class="form-label">E-mail corporativo</label>
+                  <input
+                    type="email"
+                    name="email"
+                    class="form-input"
+                    placeholder="ex@empresa.com.br"
+                    required
+                  />
+                </div>
+              </div>
+              <div class="form-row">
+                <div class="form-group">
+                  <label class="form-label">Telefone</label>
+                  <input
+                    type="tel"
+                    name="telefone"
+                    class="form-input"
+                    placeholder="(11) 00000-0000"
+                    required
+                  />
+                </div>
+                <div class="form-group">
+                  <label class="form-label">Tamanho da Empresa</label>
+                  <select name="tamanho_empresa" class="form-select">
+                    <option>1–10 colaboradores</option>
+                    <option>11–30</option>
+                    <option>31–50</option>
+                    <option>51–100</option>
+                    <option>100+</option>
+                  </select>
+                </div>
+              </div>
+              <div class="form-group">
+                <label class="form-label">Como podemos ajudar?</label>
+                <textarea
+                  name="mensagem"
+                  class="form-textarea"
+                  placeholder="Descreva brevemente sua necessidade..."
+                  required
+                ></textarea>
+              </div>
+              <button class="form-submit">Enviar Mensagem</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+      <div class="container">
+        <div class="footer-grid">
+          <div class="footer-brand">
+            <a href="#" class="logo"
+              ><div class="logo-icon">Ü</div>
+              ÜPPORT</a
+            >
+            <p>
+              Suporte de TI gerenciado para empresas que não podem parar. São
+              Paulo e Grande SP.
+            </p>
+          </div>
+          <div class="footer-col">
+            <h4>Navegação</h4>
+            <a href="#">Home</a><a href="#servicos">Serviços</a
+            ><a href="#quem-somos">Quem Somos</a
+            ><a href="#como-funciona">Como Funciona</a
+            ><a href="#planos">Planos</a><a href="#contato">Contato</a>
+          </div>
+          <div class="footer-col">
+            <h4>Serviços</h4>
+            <a href="#">Consultoria de TI</a><a href="#">Suporte Técnico</a
+            ><a href="#">Serviços NOC</a><a href="#">Serviços SOC</a
+            ><a href="#">Gerenciamento de Ativos</a
+            ><a href="#">Redes e Infraestrutura</a>
+          </div>
+          <div class="footer-col">
+            <h4>Contato</h4>
+            <a href="tel:+5511952136402">(11) 95213-6402</a
+            ><a href="mailto:contato@upport.com.br">contato@upport.com.br</a
+            ><a href="#">São Paulo e Grande SP</a
+            ><a href="#">Seg–Sex, 08h às 18h</a>
+          </div>
+        </div>
+        <div class="footer-standards">
+          <div class="standard-item">
+            <span class="standard-label">ITIL 4</span>
+            <div class="standard-logo">
+              <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/>
+              </svg>
+            </div>
+          </div>
+          <div class="standard-item">
+            <span class="standard-label">Cisco CCNA</span>
+            <div class="standard-logo">
+              <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M5 12.55a11 11 0 0 1 14.08 0M1.42 9a16 16 0 0 1 21.16 0M8.59 16.11a6 6 0 0 1 6.82 0M12 20h.01"/>
+              </svg>
+            </div>
+          </div>
+          <div class="standard-item">
+            <span class="standard-label">Microsoft 365</span>
+            <div class="standard-logo">
+              <svg width="46" height="46" viewBox="0 0 23 23" fill="currentColor">
+                <path d="M0 0h11v11H0zM12 0h11v11H12zM0 12h11v11H0zM12 12h11v11H12z"/>
+              </svg>
+            </div>
+          </div>
+          <div class="standard-item">
+            <span class="standard-label">Segurança & LGPD</span>
+            <div class="standard-logo">
+              <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+              </svg>
+            </div>
+          </div>
+        </div>
+        <div class="footer-bottom">
+          <div style="display: flex; gap: 24px; flex-wrap: wrap;">
+            <span>&copy; 2026 Üpport. Todos os direitos reservados.</span>
+            <span>CNPJ: XX.XXX.XXX/0001-XX</span>
+          </div>
+          <div style="display: flex; gap: 24px;">
+            <a href="privacidade.html" style="color: inherit; text-decoration: none; transition: color 0.2s;" onmouseover="this.style.color='white'" onmouseout="this.style.color='inherit'">Privacidade e Termos</a>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <!-- WHATSAPP FAB -->
+    <a
+      href="https://wa.me/5511952136402"
+      class="whatsapp-fab"
+      target="_blank"
+      rel="noopener"
+      ><svg viewBox="0 0 24 24">
+        <path
+          d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"
+        />
+        <path
+          d="M12 0C5.373 0 0 5.373 0 12c0 2.625.846 5.059 2.284 7.034L.789 23.492a.5.5 0 00.611.611l4.458-1.495A11.952 11.952 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 22c-2.352 0-4.55-.752-6.338-2.034l-.442-.332-3.088 1.035 1.035-3.088-.332-.442A9.96 9.96 0 012 12C2 6.477 6.477 2 12 2s10 4.477 10 10-4.477 10-10 10z"
+        /></svg
+    ></a>
+
+    <!-- SIDE CONTACT BUTTON -->
+    <a href="javascript:void(0)" class="side-contact-btn" id="openContactModal">
+      <svg viewBox="0 0 18 18">
+        <path
+          fill-rule="evenodd"
+          clip-rule="evenodd"
+          d="M3 14.25C3 14.4489 3.07902 14.6397 3.21967 14.7803C3.36032 14.921 3.55109 15 3.75 15L13.9393 15L12.2197 13.2803C12.079 13.1397 12 12.9489 12 12.75L12 3.75C12 3.55109 11.921 3.36032 11.7803 3.21967C11.6397 3.07902 11.4489 3 11.25 3L3.75 3C3.55109 3 3.36032 3.07902 3.21967 3.21967C3.07902 3.36032 3 3.55109 3 3.75L3 14.25ZM2.15901 15.841C1.73705 15.419 1.5 14.8467 1.5 14.25L1.5 3.75C1.5 3.15326 1.73705 2.58097 2.15901 2.15901C2.58097 1.73705 3.15326 1.5 3.75 1.5L11.25 1.5C11.8467 1.5 12.419 1.73705 12.841 2.15901C13.2629 2.58097 13.5 3.15326 13.5 3.75L13.5 12.4393L16.2803 15.2197C16.4948 15.4342 16.559 15.7568 16.4429 16.037C16.3268 16.3173 16.0533 16.5 15.75 16.5L3.75 16.5C3.15326 16.5 2.58097 16.2629 2.15901 15.841Z"
+        />
+      </svg>
+      <span>Fale conosco</span>
+    </a>
+
+    <!-- CONTACT MODAL -->
+    <div id="contactModal" class="modal">
+      <div class="modal-content">
+        <span class="close-modal" id="closeContactModal">&times;</span>
+        <h2>Pronto para ter uma TI que funciona?</h2>
+        <div class="modal-grid">
+          <div class="modal-item">
+            <label>WhatsApp</label>
+            <a href="https://wa.me/5511952136402" target="_blank"
+              >(11) 95213-6402</a
+            >
+          </div>
+          <div class="modal-item">
+            <label>E-mail</label>
+            <a href="mailto:contato@upport.com.br">contato@upport.com.br</a>
+          </div>
+          <div class="modal-item">
+            <label>Atendimento</label>
+            <span>São Paulo e Grande SP</span>
+          </div>
+          <div class="modal-item">
+            <label>Horário</label>
+            <span>Seg–Sex, 08h às 18h</span>
+          </div>
+        </div>
+        <a
+          href="https://wa.me/5511952136402"
+          class="btn btn-primary"
+          target="_blank"
+          style="margin-top: 32px; width: 100%; justify-content: center"
+        >
+          Falar no WhatsApp agora
+        </a>
+      </div>
+    </div>
+
+    <!-- COOKIE CONSENT BANNER -->
+    <div id="cookieBanner" class="cookie-banner">
+      <div class="cookie-container">
+        <p>
+          Utilizamos cookies para melhorar sua experiência e analisar o tráfego
+          do site. Ao continuar navegando, você concorda com nossa
+          <a href="privacidade.html">Política de Privacidade</a>.
+        </p>
+        <div class="cookie-buttons">
+          <button id="rejectCookies" class="cookie-btn-outline">Recusar</button>
+          <button id="acceptCookies" class="cookie-btn-fill">Aceitar</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- COOKIE REVISIT BUTTON -->
+    <div id="cookieRevisit" class="cookie-revisit">
+      <button aria-label="Definições de cookies">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M12 2a10 10 0 1 0 10 10A10 10 0 0 0 12 2zm0 18a8 8 0 1 1 8-8 8 8 0 0 1-8 8z"/>
+          <circle cx="12" cy="12" r="3"/>
+        </svg>
+      </button>
+    </div>
+
+    <script>
+      // Carousel
+      const track = document.getElementById("carouselTrack");
+      const dotsContainer = document.getElementById("carouselDots");
+      const slides = track.children;
+      let current = 0;
+      let autoTimer;
+
+      // Create dots
+      for (let i = 0; i < slides.length; i++) {
+        const dot = document.createElement("button");
+        dot.className = "carousel-dot" + (i === 0 ? " active" : "");
+        dot.onclick = () => goTo(i);
+        dotsContainer.appendChild(dot);
+      }
+
+      function goTo(index) {
+        current = index;
+        if (current < 0) current = slides.length - 1;
+        if (current >= slides.length) current = 0;
+        track.style.transform = `translateX(-${current * 100}%)`;
+        document.querySelectorAll(".carousel-dot").forEach((d, i) => {
+          d.className = "carousel-dot" + (i === current ? " active" : "");
+        });
+        resetAuto();
+      }
+
+      function moveCarousel(dir) {
+        goTo(current + dir);
+      }
+
+      function resetAuto() {
+        clearInterval(autoTimer);
+        autoTimer = setInterval(() => goTo(current + 1), 5000);
+      }
+      resetAuto();
+
+      // Animations
+      const observer = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting)
+              entry.target.style.animationPlayState = "running";
+          });
+        },
+        { threshold: 0.1 },
+      );
+      document.querySelectorAll(".animate").forEach((el) => {
+        el.style.animationPlayState = "paused";
+        observer.observe(el);
+      });
+
+      // Service Worker Registration
+      if ("serviceWorker" in navigator) {
+        window.addEventListener("load", () => {
+          navigator.serviceWorker
+            .register("/sw.js")
+            .then((reg) => console.log("Service Worker registrado!", reg))
+            .catch((err) =>
+              console.log("Falha ao registrar Service Worker", err),
+            );
+        });
+      }
+
+      // PWA Install Prompt Logic
+      let deferredPrompt;
+      const installBtn = document.getElementById("installApp");
+
+      window.addEventListener("beforeinstallprompt", (e) => {
+        // Prevent Chrome 67 and earlier from automatically showing the prompt
+        e.preventDefault();
+        // Stash the event so it can be triggered later.
+        deferredPrompt = e;
+        // Update UI notify the user they can install the PWA
+        installBtn.style.display = "flex";
+      });
+
+      installBtn.addEventListener("click", (e) => {
+        // Hide the app provided install promotion
+        installBtn.style.display = "none";
+        // Show the install prompt
+        deferredPrompt.prompt();
+        // Wait for the user to respond to the prompt
+        deferredPrompt.userChoice.then((choiceResult) => {
+          if (choiceResult.outcome === "accepted") {
+            console.log("Usuário aceitou a instalação");
+          } else {
+            console.log("Usuário recusou a instalação");
+          }
+          deferredPrompt = null;
+        });
+      });
+
+      window.addEventListener("appinstalled", (evt) => {
+        console.log("App instalado com sucesso!");
+        installBtn.style.display = "none";
+      });
+
+      // Contact Modal Logic
+      const contactModal = document.getElementById("contactModal");
+      const openModalBtn = document.getElementById("openContactModal");
+      const closeModalBtn = document.getElementById("closeContactModal");
+
+      openModalBtn.addEventListener("click", () => {
+        contactModal.classList.add("active");
+        document.body.style.overflow = "hidden"; // Prevent scroll when modal is open
+      });
+
+      closeModalBtn.addEventListener("click", () => {
+        contactModal.classList.remove("active");
+        document.body.style.overflow = "auto";
+      });
+
+      // Close modal on click outside
+      window.addEventListener("click", (e) => {
+        if (e.target === contactModal) {
+          contactModal.classList.remove("active");
+          document.body.style.overflow = "auto";
+        }
+      });
+
+      // Cookie Consent Logic
+      const cookieBanner = document.getElementById("cookieBanner");
+      const cookieRevisit = document.getElementById("cookieRevisit");
+      const acceptCookies = document.getElementById("acceptCookies");
+      const rejectCookies = document.getElementById("rejectCookies");
+
+      function setCookieConsent(status) {
+        localStorage.setItem("cookieConsent", status);
+        cookieBanner.classList.remove("active");
+        cookieRevisit.classList.add("active");
+      }
+
+      window.addEventListener("load", () => {
+        const consent = localStorage.getItem("cookieConsent");
+        if (!consent) {
+          setTimeout(() => {
+            cookieBanner.classList.add("active");
+          }, 2000);
+        } else {
+          cookieRevisit.classList.add("active");
+        }
+      });
+
+      acceptCookies.addEventListener("click", () => setCookieConsent("accepted"));
+      rejectCookies.addEventListener("click", () => setCookieConsent("rejected"));
+      
+      cookieRevisit.addEventListener("click", () => {
+        cookieBanner.classList.add("active");
+      });
+
+      // Mobile Menu Toggle
+      const mobileToggle = document.querySelector(".mobile-toggle");
+      const nav = document.querySelector("nav");
+
+      mobileToggle.addEventListener("click", () => {
+        nav.classList.toggle("active");
+        mobileToggle.classList.toggle("active");
+      });
+
+      // Close menu when clicking a link
+      nav.querySelectorAll("a").forEach((link) => {
+        link.addEventListener("click", () => {
+          nav.classList.remove("active");
+          mobileToggle.classList.remove("active");
+        });
+      });
+
+      // Mobile Dropdown Accordion
+      const dropdown = document.querySelector(".nav-item-dropdown");
+      const dropdownLink = dropdown.querySelector("a");
+
+      dropdownLink.addEventListener("click", (e) => {
+        if (window.innerWidth <= 768) {
+          e.preventDefault();
+          dropdown.classList.toggle("open");
+        }
+      });
+
+      // Number Counters
+      const counters = document.querySelectorAll('.counter');
+      const counterObserver = new IntersectionObserver((entries, observer) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            const counter = entry.target;
+            const target = +counter.getAttribute('data-target');
+            let count = 0;
+            const increment = target / 40; 
+
+            const updateCount = () => {
+              count += increment;
+              if (count < target) {
+                counter.innerText = Math.ceil(count);
+                requestAnimationFrame(updateCount);
+              } else {
+                counter.innerText = target;
+              }
+            };
+            updateCount();
+            observer.unobserve(counter);
+          }
+        });
+      }, { threshold: 0.5 });
+
+      counters.forEach(counter => {
+        counterObserver.observe(counter);
+      });
+    </script>
+  </body>
+</html>

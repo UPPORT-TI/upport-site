@@ -169,17 +169,7 @@ if (mobileToggle && nav) {
     });
   });
 
-  // Mobile Dropdown Accordion
-  const dropdown = document.querySelector(".nav-item-dropdown");
-  if (dropdown) {
-    const dropdownLink = dropdown.querySelector("a");
-    dropdownLink.addEventListener("click", (e) => {
-      if (window.innerWidth <= 768) {
-        e.preventDefault();
-        dropdown.classList.toggle("open");
-      }
-    });
-  }
+  // Mobile Dropdown is now always open via CSS, no JS toggle needed.
 }
 
 // Number Counters

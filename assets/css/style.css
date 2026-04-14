@@ -36,6 +36,7 @@ html {
   scroll-behavior: smooth;
   scrollbar-width: none; /* Firefox */
   -ms-overflow-style: none; /* IE/Edge */
+  touch-action: manipulation;
 }
 html::-webkit-scrollbar {
   display: none; /* Chrome/Safari */
@@ -50,6 +51,7 @@ body {
   overflow-x: hidden;
   scrollbar-width: none;
   -ms-overflow-style: none;
+  touch-action: manipulation;
 }
 body::-webkit-scrollbar {
   display: none;

@@ -171,12 +171,34 @@ body::-webkit-scrollbar {
   width: 13px;
   height: 13px;
 }
+.topbar .btn-chamado-top {
+  padding: 3px 12px;
+  border-radius: 6px;
+  background: var(--accent-bright);
+  color: white;
+  font-size: 11px;
+  font-weight: 700;
+  border: 1px solid var(--accent-bright);
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.topbar .btn-chamado-top:hover {
+  background: transparent;
+  color: white;
+  border-color: white;
+  transform: translateY(-1px);
+}
 .topbar .btn-area-top {
   padding: 3px 12px;
   border-radius: 6px;
   border: 1px solid rgba(255, 255, 255, 0.35);
   font-size: 11px;
   font-weight: 600;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.topbar .btn-area-top:hover {
+  background: rgba(255, 255, 255, 0.1);
+  border-color: white;
+  transform: translateY(-1px);
 }
 
 /* ===== HEADER ===== */

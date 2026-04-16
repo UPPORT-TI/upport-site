@@ -1183,6 +1183,10 @@ footer .logo { color: white; }
 .cta-banner { text-align: center; max-width: 600px; margin: 0 auto; }
 .ck { color: var(--green); flex-shrink: 0; margin-top: 1px; }
 
+.nav-mobile-cta {
+  display: none;
+}
+
 @media (max-width: 1024px) {
   .pain-grid, .pricing-grid { grid-template-columns: repeat(2, 1fr); }
   .about-grid, .contact-grid { grid-template-columns: 1fr; }
@@ -1207,6 +1211,43 @@ footer .logo { color: white; }
     z-index: 100;
     align-items: center;
     text-align: center;
+    max-height: calc(100vh - 80px);
+    overflow-y: auto;
+    padding-bottom: 40px;
+  }
+  .nav-mobile-cta {
+    display: flex !important;
+    flex-direction: column;
+    gap: 12px;
+    width: 100%;
+    margin-bottom: 20px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid var(--border);
+  }
+  .btn-chamado-mobile,
+  .btn-area-mobile {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    padding: 14px;
+    border-radius: 12px;
+    font-family: var(--font-display);
+    font-size: 14px;
+    font-weight: 700;
+    text-decoration: none;
+    transition: all 0.3s;
+    width: 100%;
+  }
+  .btn-chamado-mobile {
+    background: var(--blue-gradient);
+    color: white;
+    box-shadow: 0 4px 12px rgba(27, 58, 107, 0.2);
+  }
+  .btn-area-mobile {
+    background: white;
+    color: var(--text-primary);
+    border: 1px solid var(--border);
   }
   nav.active .nav-item-dropdown > a {
     justify-content: center;

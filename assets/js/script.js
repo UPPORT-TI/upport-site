@@ -102,20 +102,38 @@ const openModalBtn = document.getElementById("openContactModal");
 const closeModalBtn = document.getElementById("closeContactModal");
 
 if (contactModal && openModalBtn && closeModalBtn) {
-  openModalBtn.addEventListener("click", () => {
+  function openContactModal() {
     contactModal.classList.add("active");
+    openModalBtn.setAttribute("aria-expanded", "true");
     document.body.style.overflow = "hidden";
+    closeModalBtn.focus();
+  }
+
+  function closeContactModal() {
+    contactModal.classList.remove("active");
+    openModalBtn.setAttribute("aria-expanded", "false");
+    document.body.style.overflow = "auto";
+    openModalBtn.focus();
+  }
+
+  openModalBtn.addEventListener("click", (e) => {
+    e.preventDefault();
+    openContactModal();
   });
 
   closeModalBtn.addEventListener("click", () => {
-    contactModal.classList.remove("active");
-    document.body.style.overflow = "auto";
+    closeContactModal();
   });
 
   window.addEventListener("click", (e) => {
     if (e.target === contactModal) {
-      contactModal.classList.remove("active");
-      document.body.style.overflow = "auto";
+      closeContactModal();
+    }
+  });
+
+  window.addEventListener("keydown", (e) => {
+    if (e.key === "Escape" && contactModal.classList.contains("active")) {
+      closeContactModal();
     }
   });
 }
@@ -157,16 +175,32 @@ const mobileToggle = document.querySelector(".mobile-toggle");
 const nav = document.querySelector("nav");
 
 if (mobileToggle && nav) {
+  function closeMobileMenu() {
+    nav.classList.remove("active");
+    mobileToggle.classList.remove("active");
+    mobileToggle.setAttribute("aria-expanded", "false");
+    mobileToggle.setAttribute("aria-label", "Abrir menu");
+  }
+
   mobileToggle.addEventListener("click", () => {
-    nav.classList.toggle("active");
-    mobileToggle.classList.toggle("active");
+    const willOpen = !nav.classList.contains("active");
+    nav.classList.toggle("active", willOpen);
+    mobileToggle.classList.toggle("active", willOpen);
+    mobileToggle.setAttribute("aria-expanded", String(willOpen));
+    mobileToggle.setAttribute("aria-label", willOpen ? "Fechar menu" : "Abrir menu");
   });
 
   nav.querySelectorAll("a").forEach((link) => {
     link.addEventListener("click", () => {
-      nav.classList.remove("active");
-      mobileToggle.classList.remove("active");
+      closeMobileMenu();
     });
+  });
+
+  window.addEventListener("keydown", (e) => {
+    if (e.key === "Escape" && nav.classList.contains("active")) {
+      closeMobileMenu();
+      mobileToggle.focus();
+    }
   });
 
   // Mobile Dropdown is now always open via CSS, no JS toggle needed.
@@ -210,15 +244,21 @@ if (themeToggle) {
   if (currentTheme) {
     document.documentElement.setAttribute("data-theme", currentTheme);
   }
+  themeToggle.setAttribute(
+    "aria-pressed",
+    String(document.documentElement.getAttribute("data-theme") === "dark"),
+  );
 
   themeToggle.addEventListener("click", () => {
     let theme = document.documentElement.getAttribute("data-theme");
     if (theme === "dark") {
       document.documentElement.removeAttribute("data-theme");
       localStorage.setItem("theme", "light");
+      themeToggle.setAttribute("aria-pressed", "false");
     } else {
       document.documentElement.setAttribute("data-theme", "dark");
       localStorage.setItem("theme", "dark");
+      themeToggle.setAttribute("aria-pressed", "true");
     }
   });
 }

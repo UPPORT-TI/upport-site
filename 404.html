@@ -1,82 +1,72 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="pt-BR">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Página não encontrada — Üpport</title>
-    <link rel="icon" type="image/png" href="assets/fav.png?v=1.1">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-    <style>
-        :root {
-            --accent: #1b3a6b;
-            --blue-gradient: linear-gradient(135deg, #1b3a6b 0%, #2d5ba0 100%);
-            --text-primary: #0f172a;
-            --text-secondary: #334155;
-            --font-display: "Plus Jakarta Sans", sans-serif;
-        }
-
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-        body { 
-            background: #f6f8fb; 
-            color: var(--text-secondary); 
-            font-family: var(--font-display); 
-            height: 100vh; 
-            display: flex; 
-            align-items: center; 
-            justify-content: center;
-            text-align: center;
-            padding: 20px;
-        }
-
-        .error-container {
-            max-width: 500px;
-        }
-
-        .logo-icon {
-            width: 64px;
-            height: 64px;
-            background: var(--blue-gradient);
-            border-radius: 16px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 30px;
-            font-weight: 800;
-            color: white;
-            margin: 0 auto 32px;
-            box-shadow: 0 10px 30px rgba(27, 58, 107, 0.2);
-        }
-
-        h1 { font-size: 80px; font-weight: 800; color: var(--accent); line-height: 1; margin-bottom: 16px; opacity: 0.1; }
-        h2 { font-size: 24px; color: var(--text-primary); margin-bottom: 16px; }
-        p { margin-bottom: 32px; font-size: 16px; line-height: 1.6; }
-
-        .btn {
-            display: inline-block;
-            background: var(--blue-gradient);
-            color: white;
-            text-decoration: none;
-            padding: 14px 28px;
-            border-radius: 12px;
-            font-weight: 700;
-            font-size: 14px;
-            transition: all 0.3s;
-            box-shadow: 0 4px 16px rgba(27, 58, 107, 0.25);
-        }
-        .btn:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 8px 28px rgba(27, 58, 107, 0.35);
-        }
-    </style>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex, follow">
+  <meta name="theme-color" content="#0b2026">
+  <title>P&aacute;gina n&atilde;o encontrada | Upport</title>
+  <link rel="icon" href="assets/brand/upport-mark-v2.png" type="image/png">
+  <link rel="stylesheet" href="assets/css/v2.css">
 </head>
-<body>
-    <div class="error-container">
-        <div class="logo-icon">Ü</div>
-        <h1>404</h1>
-        <h2>Oops! Página não encontrada.</h2>
-        <p>Parece que o caminho que você está tentando acessar não existe ou foi movido. Quer voltar para nossa página principal?</p>
-        <a href="/" class="btn">Voltar para a Home</a>
+<body class="error-page">
+  <a class="skip-link" href="#conteudo">Ir para o conte&uacute;do</a>
+
+  <header class="site-header">
+    <div class="shell nav-shell">
+      <a class="brand" href="preview.html" aria-label="Upport, p&aacute;gina inicial">
+        <img class="brand-logo" src="assets/brand/upport-logo-light.png" alt="">
+      </a>
+      <nav class="site-nav" id="primary-nav" data-site-nav aria-label="Navega&ccedil;&atilde;o principal">
+        <a href="preview.html#plataforma">Solu&ccedil;&otilde;es</a>
+        <a href="preview.html#clientes">Clientes</a>
+        <a href="suporte-ti.html">TI gerenciada</a>
+        <a href="erp.html">ERP</a>
+        <a href="crm.html">CRM</a>
+        <a href="contato.html">Contato</a>
+      </nav>
+      <div class="nav-actions">
+        <a class="nav-login" href="https://crm.upport.com.br">&Aacute;rea do cliente</a>
+        <a class="button button-primary" href="contato.html">Falar com a Upport <span class="arrow">&rarr;</span></a>
+        <button class="menu-toggle" type="button" data-menu-toggle aria-controls="primary-nav" aria-expanded="false" aria-label="Abrir menu"><span></span></button>
+      </div>
     </div>
+  </header>
+
+  <main id="conteudo" class="error-main">
+    <section class="error-hero">
+      <div class="shell error-layout">
+        <div class="error-code" aria-hidden="true">404</div>
+        <div class="error-copy">
+          <p class="eyebrow">Caminho interrompido</p>
+          <h1>Esta p&aacute;gina n&atilde;o est&aacute; mais aqui.</h1>
+          <p class="lead">O endere&ccedil;o pode ter mudado ou n&atilde;o existir. Sua pr&oacute;xima rota continua logo abaixo.</p>
+          <div class="hero-actions">
+            <a class="button button-primary" href="preview.html">Voltar ao site <span class="arrow">&rarr;</span></a>
+            <a class="button button-outline-dark" href="contato.html">Falar com a Upport</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <nav class="error-routes" aria-label="Atalhos para solu&ccedil;&otilde;es">
+      <div class="shell error-route-grid">
+        <a href="suporte-ti.html"><span>01</span><strong>TI gerenciada</strong><small>Suporte e infraestrutura</small></a>
+        <a href="erp.html"><span>02</span><strong>ERPNext</strong><small>Gest&atilde;o integrada</small></a>
+        <a href="crm.html"><span>03</span><strong>CRM Twenty</strong><small>Opera&ccedil;&atilde;o comercial</small></a>
+        <a href="software.html"><span>04</span><strong>Software sob medida</strong><small>Sistemas e integra&ccedil;&otilde;es</small></a>
+      </div>
+    </nav>
+  </main>
+
+  <footer class="site-footer error-footer">
+    <div class="shell">
+      <div class="footer-bottom">
+        <span>&copy; <span data-year></span> Upport.</span>
+        <span>S&atilde;o Paulo e Grande SP &middot; CNPJ 66.298.127/0001-47</span>
+      </div>
+    </div>
+  </footer>
+  <script type="module" src="/src/main.ts"></script>
 </body>
 </html>

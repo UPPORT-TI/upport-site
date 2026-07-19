@@ -1,0 +1,23 @@
+{
+  "name": "upport-site",
+  "private": true,
+  "version": "2.0.0-preview",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "typecheck": "tsc --noEmit",
+    "test": "tsx --test tests/*.test.ts",
+    "check": "npm run typecheck && npm test && npm run build"
+  },
+  "devDependencies": {
+    "@types/node": "^26.1.1",
+    "tsx": "^4.23.1",
+    "typescript": "^5.9.3",
+    "vite": "^7.2.4"
+  },
+  "dependencies": {
+    "fast-xml-parser": "^5.10.1",
+    "lucide": "^0.468.0"
+  }
+}

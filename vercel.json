@@ -1,11 +1,30 @@
 {
   "cleanUrls": true,
   "trailingSlash": false,
+  "functions": {
+    "api/booking.ts": {
+      "maxDuration": 10
+    },
+    "api/spotlight.ts": {
+      "maxDuration": 15
+    }
+  },
   "redirects": [
     {
       "source": "/(upport-landing.html|index.html)",
       "destination": "/",
       "permanent": true
+    },
+    {
+      "source": "/(preview.html|preview)",
+      "destination": "/",
+      "permanent": true
+    }
+  ],
+  "rewrites": [
+    {
+      "source": "/",
+      "destination": "/preview.html"
     }
   ],
   "headers": [
@@ -23,11 +42,11 @@
       "headers": [
         {
           "key": "Content-Security-Policy",
-          "value": "default-src 'self'; img-src 'self' data: https:; script-src 'self' 'unsafe-inline' https://www.googletagmanager.com https://www.google-analytics.com https://assets.calendly.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://assets.calendly.com https://www.googletagmanager.com; connect-src 'self' https://www.google-analytics.com; font-src 'self' data: https://fonts.gstatic.com; frame-src https://calendly.com;"
+          "value": "default-src 'self'; base-uri 'self'; object-src 'none'; frame-ancestors 'none'; form-action 'self'; script-src 'self' 'sha256-WO/Mdo+rLhOmL9PjypJiuQL5lQLm+isrrcSPQFv1zNk=' 'sha256-BhK5nshr33XuDjvdpB3Cjymu+9EAtzH0HH3WNeVG4Dk=' 'sha256-FlpbiG3GJ2dsEuWL5oiSYiZ4fLkkm0BoI15sHyqHz/w=' 'sha256-F/mht6r50wELeYDZPVC592ZjX3SWHTt4Dhbe1cV738U=' 'sha256-vh4ESQG95VtyCO108xt8N01S6VtCm5sBNqSTufooV7w=' 'sha256-+uk3MLb0FSlr/bwrdyyb75tk4KKBF11+EVtgli/slnI=' 'sha256-pMgE0vxVTDpxkpxXrJJeW+1Au7ZiH4mDoV1cjZrRCqg=' 'sha256-LkJzGB8c+fAJZ3HdMbv5Fy6OVP2FLGAHvNiNTWh57lw='; style-src 'self' 'unsafe-inline'; img-src 'self' data: https:; connect-src 'self'; font-src 'self' data:; frame-src 'none'; media-src 'self'; manifest-src 'self'; worker-src 'self'; upgrade-insecure-requests"
         },
         {
           "key": "X-Frame-Options",
-          "value": "SAMEORIGIN"
+          "value": "DENY"
         },
         {
           "key": "X-Content-Type-Options",
@@ -39,7 +58,7 @@
         },
         {
           "key": "Permissions-Policy",
-          "value": "camera=(), microphone=(), geolocation=()"
+          "value": "camera=(), microphone=(), geolocation=(), payment=(), usb=(), browsing-topics=()"
         },
         {
           "key": "Strict-Transport-Security",
@@ -54,8 +73,12 @@
           "value": "same-origin"
         },
         {
-          "key": "Cross-Origin-Embedder-Policy",
-          "value": "unsafe-none"
+          "key": "X-Permitted-Cross-Domain-Policies",
+          "value": "none"
+        },
+        {
+          "key": "X-DNS-Prefetch-Control",
+          "value": "off"
         }
       ]
     }

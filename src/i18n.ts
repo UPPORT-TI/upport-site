@@ -57,6 +57,12 @@ import {
 type Language = "pt" | "en" | "es";
 type Dictionary = Record<string, string>;
 
+const FLAG_URLS: Record<Language, string> = {
+  pt: new URL("../assets/flags/br.png", import.meta.url).href,
+  en: new URL("../assets/flags/us.png", import.meta.url).href,
+  es: new URL("../assets/flags/es.png", import.meta.url).href,
+};
+
 const LANGUAGE_KEY = "upport-language";
 let activeLanguage: Language = "pt";
 
@@ -1730,9 +1736,9 @@ function languageMarkup(): string {
   return `<div class="language-picker" data-language-picker>
     <button class="language-trigger" type="button" data-language-trigger aria-label="Selecionar idioma" aria-expanded="false" aria-controls="language-menu"><i data-lucide="globe-2" aria-hidden="true"></i><span data-language-code>PT</span><i data-lucide="chevron-down" aria-hidden="true"></i></button>
     <div class="language-menu" id="language-menu" data-language-menu role="menu" hidden>
-      <button type="button" role="menuitemradio" data-language="en"><img src="assets/flags/us.png" alt=""><strong>English</strong></button>
-      <button type="button" role="menuitemradio" data-language="pt"><img src="assets/flags/br.png" alt=""><strong>Português</strong></button>
-      <button type="button" role="menuitemradio" data-language="es"><img src="assets/flags/es.png" alt=""><strong>Español</strong></button>
+      <button type="button" role="menuitemradio" data-language="en"><img src="${FLAG_URLS.en}" alt=""><strong>English</strong></button>
+      <button type="button" role="menuitemradio" data-language="pt"><img src="${FLAG_URLS.pt}" alt=""><strong>Português</strong></button>
+      <button type="button" role="menuitemradio" data-language="es"><img src="${FLAG_URLS.es}" alt=""><strong>Español</strong></button>
     </div>
   </div>`;
 }

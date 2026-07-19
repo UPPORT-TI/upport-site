@@ -14,17 +14,6 @@
       "source": "/(upport-landing.html|index.html)",
       "destination": "/",
       "permanent": true
-    },
-    {
-      "source": "/(preview.html|preview)",
-      "destination": "/",
-      "permanent": true
-    }
-  ],
-  "rewrites": [
-    {
-      "source": "/",
-      "destination": "/preview.html"
     }
   ],
   "headers": [

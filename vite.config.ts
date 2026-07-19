@@ -35,7 +35,7 @@ export default defineConfig({
   build: {
     rollupOptions: {
       input: {
-        preview: resolve(projectRoot, "preview.html"),
+        home: resolve(projectRoot, "index.html"),
         support: resolve(projectRoot, "suporte-ti.html"),
         erp: resolve(projectRoot, "erp.html"),
         crm: resolve(projectRoot, "crm.html"),

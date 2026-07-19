@@ -1,5 +1,5 @@
 import { XMLParser } from "fast-xml-parser";
-import { readTextLimited } from "./server/http";
+import { readTextLimited } from "./server/http.js";
 
 export interface SpotlightItem {
   source: string;

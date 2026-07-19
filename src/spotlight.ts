@@ -1,5 +1,5 @@
-import { translateText } from "./i18n";
-import type { SpotlightItem } from "./spotlight-feed";
+import { translateText } from "./i18n.js";
+import type { SpotlightItem } from "./spotlight-feed.js";
 
 interface SpotlightResponse {
   items: SpotlightItem[];

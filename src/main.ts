@@ -1,6 +1,6 @@
-import { initI18n, translateText } from "./i18n";
-import { bookingMarkup, initBooking } from "./booking";
-import { initSpotlight } from "./spotlight";
+import { initI18n, translateText } from "./i18n.js";
+import { bookingMarkup, initBooking } from "./booking.js";
+import { initSpotlight } from "./spotlight.js";
 
 type ConsentChoice = "accepted" | "rejected";
 

@@ -1,5 +1,5 @@
-import { getSpotlightFeed } from "../src/spotlight-feed";
-import { jsonResponse } from "../src/server/http";
+import { getSpotlightFeed } from "../src/spotlight-feed.js";
+import { jsonResponse } from "../src/server/http.js";
 
 export async function handleSpotlightRequest(request: Request): Promise<Response> {
   if (request.method !== "GET") return jsonResponse({ error: "method_not_allowed" }, 405, { Allow: "GET" });

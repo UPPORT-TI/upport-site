@@ -1,7 +1,7 @@
 import { resolve } from "node:path";
 import { fileURLToPath } from "node:url";
 import { defineConfig } from "vite";
-import { getSpotlightFeed } from "./src/spotlight-feed";
+import { getSpotlightFeed } from "./src/spotlight-feed.js";
 
 const projectRoot = fileURLToPath(new URL(".", import.meta.url));
 

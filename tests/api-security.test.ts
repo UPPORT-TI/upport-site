@@ -1,7 +1,7 @@
 import assert from "node:assert/strict";
 import test from "node:test";
-import { handleBookingRequest } from "../api/booking";
-import { readTextLimited } from "../src/server/http";
+import { handleBookingRequest } from "../api/booking.js";
+import { readTextLimited } from "../src/server/http.js";
 
 let requestSequence = 0;
 

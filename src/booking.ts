@@ -1,4 +1,4 @@
-import { translateText } from "./i18n";
+import { translateText } from "./i18n.js";
 
 const BUSINESS_START = 8;
 const BUSINESS_END = 18;

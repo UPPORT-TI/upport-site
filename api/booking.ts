@@ -1,4 +1,4 @@
-import { checkRateLimit, isSameOriginRequest, jsonResponse, readJsonObject } from "../src/server/http";
+import { checkRateLimit, isSameOriginRequest, jsonResponse, readJsonObject } from "../src/server/http.js";
 
 interface Booking {
   name: string;

@@ -870,6 +870,46 @@ h3 { font-size: 24px; }
 
 .support-product-hero .product-hero-grid { grid-template-columns: .82fr 1.18fr; gap: 60px; }
 .support-product-hero h1 { font-size: clamp(46px,5vw,70px); }
+.siem-product-hero { overflow: hidden; padding: 72px 0 68px; background: #f3f6f8; }
+.siem-product-hero .product-hero-grid { grid-template-columns: minmax(390px,.72fr) minmax(0,1.28fr); gap: 54px; }
+.siem-product-hero h1 { font-size: clamp(46px,5vw,70px); }
+.siem-brand-lockup { display: flex; align-items: center; gap: 12px; margin-top: 30px; }
+.siem-brand-lockup > img { width: 42px; height: 42px; border-radius: 7px; object-fit: cover; }
+.siem-brand-lockup > span { display: grid; gap: 2px; }
+.siem-brand-lockup strong { font-size: 12px; }
+.siem-brand-lockup small { color: var(--ink-soft); font-size: 10px; }
+.siem-dashboard-hero { min-width: 0; margin: 0; overflow: hidden; border: 1px solid #d5dce2; border-radius: 8px; background: #eef0f2; box-shadow: 0 28px 72px rgba(16,36,44,.18); }
+.siem-window-bar { position: relative; min-height: 42px; display: flex; align-items: center; justify-content: center; padding: 0 150px; border-bottom: 1px solid #dce1e5; color: #66747b; background: #fff; font-size: 9px; }
+.siem-window-bar .window-controls { left: 14px; }
+.siem-window-bar > small { position: absolute; right: 14px; display: flex; align-items: center; gap: 6px; color: #227b62; font-size: 8px; }
+.siem-window-bar > small i { width: 6px; height: 6px; border-radius: 50%; background: #2eb98b; box-shadow: 0 0 0 4px rgba(46,185,139,.12); }
+.siem-dashboard-hero > img { width: 100%; height: auto; aspect-ratio: 1395 / 822; object-fit: cover; }
+.siem-dashboard-hero figcaption { padding: 8px 12px; color: #7d898f; background: #fff; font-size: 8px; text-align: right; }
+.siem-outcomes { background: #fff; }
+.siem-capabilities { padding: 108px 0; color: #fff; background: var(--night); }
+.siem-capabilities-head { display: grid; grid-template-columns: 1fr .72fr; gap: 80px; align-items: end; }
+.siem-capabilities-head h2 { max-width: 760px; margin-bottom: 0; }
+.siem-capabilities-head > p { margin: 0; color: rgba(255,255,255,.66); font-size: 18px; }
+.siem-capability-grid { display: grid; grid-template-columns: repeat(4,1fr); margin-top: 58px; border-top: 1px solid rgba(255,255,255,.2); }
+.siem-capability-grid article { min-height: 300px; display: flex; flex-direction: column; padding: 30px 24px 26px 0; border-right: 1px solid rgba(255,255,255,.2); }
+.siem-capability-grid article + article { padding-left: 24px; }
+.siem-capability-grid article:last-child { border-right: 0; }
+.siem-capability-grid svg { width: 28px; height: 28px; color: #65d9b8; }
+.siem-capability-grid span { margin-top: 28px; color: #ff8a7d; font-size: 11px; font-weight: 800; }
+.siem-capability-grid h3 { margin: auto 0 12px; }
+.siem-capability-grid p { margin-bottom: 0; color: rgba(255,255,255,.62); font-size: 14px; }
+.siem-delivery { background: var(--warm); }
+.siem-delivery-layout { display: grid; grid-template-columns: .82fr 1.18fr; gap: 90px; align-items: start; }
+.siem-delivery-layout > div:first-child { position: sticky; top: calc(var(--nav-height) + 30px); }
+.siem-delivery-layout .lead { margin-bottom: 32px; }
+.siem-delivery-list { border-top: 1px solid var(--line); }
+.siem-delivery-list article { display: grid; grid-template-columns: 58px 1fr; gap: 20px; padding: 30px 0; border-bottom: 1px solid var(--line); }
+.siem-delivery-list article > span { width: 52px; height: 52px; display: grid; place-items: center; color: #fff; background: var(--night); }
+.siem-delivery-list svg { width: 23px; }
+.siem-delivery-list h3 { margin: 0 0 8px; font-size: 21px; }
+.siem-delivery-list p { margin: 0; color: var(--ink-soft); }
+.service-item h3 a { color: inherit; text-decoration: none; }
+.service-item h3 a:hover { color: var(--coral-action); }
 .support-console { overflow: hidden; border: 1px solid #30343b; border-radius: 7px; color: #d8d9da; background: #111217; box-shadow: 0 28px 72px rgba(4,14,17,.2); }
 .support-console-head { position: relative; height: 42px; display: flex; align-items: center; justify-content: center; padding: 0 140px; border-bottom: 1px solid #2b2f36; color: #aaaeb5; background: #181b1f; font-size: 10px; }
 .support-console-head > small { position: absolute; right: 13px; display: flex; align-items: center; gap: 6px; color: #73bf69; font-size: 8px; }
@@ -1213,6 +1253,12 @@ h3 { font-size: 24px; }
   .trust-row { grid-template-columns: 1fr; gap: 20px; }
   .client-rail { grid-template-columns: repeat(5,minmax(0,1fr)); gap: 18px; }
   .support-product-hero .product-hero-grid, .support-method-layout, .support-fit-layout { grid-template-columns: 1fr; }
+  .siem-product-hero .product-hero-grid, .siem-capabilities-head, .siem-delivery-layout { grid-template-columns: 1fr; }
+  .siem-product-hero .product-hero-grid { gap: 52px; }
+  .siem-capability-grid { grid-template-columns: repeat(2,1fr); }
+  .siem-capability-grid article:nth-child(2) { border-right: 0; }
+  .siem-capability-grid article:nth-child(-n+2) { border-bottom: 1px solid rgba(255,255,255,.2); }
+  .siem-delivery-layout > div:first-child { position: static; }
   .product-grid { grid-template-columns: repeat(2,1fr); }
   .product-link { min-height: 330px; }
   .product-link:nth-child(2) { border-right: 0; }
@@ -1281,6 +1327,22 @@ h3 { font-size: 24px; }
   .hero h1 { font-size: clamp(42px,13vw,58px); }
   .hero-actions, .contact-actions { flex-direction: column; align-items: stretch; }
   .hero-actions .button, .contact-actions .button { width: 100%; }
+  .siem-product-hero { padding: 64px 0; }
+  .siem-product-hero .product-hero-grid { gap: 42px; }
+  .siem-product-hero h1 { font-size: 42px; }
+  .siem-window-bar { justify-content: flex-start; padding: 0 12px 0 78px; }
+  .siem-window-bar > strong { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+  .siem-window-bar > small { display: none; }
+  .siem-dashboard-hero figcaption { text-align: left; }
+  .siem-capabilities { padding: 78px 0; }
+  .siem-capabilities-head { gap: 24px; }
+  .siem-capability-grid { grid-template-columns: 1fr; margin-top: 38px; }
+  .siem-capability-grid article, .siem-capability-grid article + article { min-height: 240px; padding: 28px 0; border-right: 0; border-bottom: 1px solid rgba(255,255,255,.2); }
+  .siem-capability-grid article:last-child { border-bottom: 0; }
+  .siem-capability-grid h3 { margin-top: 48px; }
+  .siem-delivery-layout { gap: 48px; }
+  .siem-delivery-list article { grid-template-columns: 48px 1fr; gap: 16px; }
+  .siem-delivery-list article > span { width: 44px; height: 44px; }
   .trust-row { grid-template-columns: 1fr; gap: 20px; }
   .client-rail { grid-template-columns: repeat(2,1fr); gap: 18px 24px; }
   .client-wordmark:last-child { grid-column: 1 / -1; }

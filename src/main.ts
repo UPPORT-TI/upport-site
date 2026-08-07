@@ -26,6 +26,14 @@ window.addEventListener("scroll", () => {
 const menuToggle = document.querySelector<HTMLButtonElement>("[data-menu-toggle]");
 const siteNav = document.querySelector<HTMLElement>("[data-site-nav]");
 
+if (siteNav && !siteNav.querySelector<HTMLAnchorElement>('a[href="siem.html"]')) {
+  const siemLink = document.createElement("a");
+  siemLink.href = "siem.html";
+  siemLink.textContent = "SIEM";
+  const contactLink = siteNav.querySelector<HTMLAnchorElement>('a[href="contato.html"]');
+  siteNav.insertBefore(siemLink, contactLink);
+}
+
 function closeMenu(): void {
   if (!menuToggle || !siteNav) return;
   siteNav.classList.remove("open");

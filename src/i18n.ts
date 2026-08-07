@@ -432,7 +432,77 @@ const privacyEn: Dictionary = {
     ". We may request additional information to confirm the data subject's identity before fulfilling a request.",
 };
 
-const en: Dictionary = { ...sharedEn, ...homeEn, ...productEn, ...privacyEn };
+const siemEn: Dictionary = {
+  "SIEM e XDR gerenciado": "Managed SIEM and XDR",
+  "Segurança que": "Security that",
+  "enxerga antes": "sees ahead",
+  "do incidente.": "of the incident.",
+  "A Upport implanta e opera o Wazuh para centralizar eventos, detectar ameaças e dar visibilidade contínua sobre endpoints, servidores e nuvem.":
+    "Upport deploys and operates Wazuh to centralize events, detect threats and provide continuous visibility across endpoints, servers and cloud environments.",
+  "Ver cobertura": "See coverage",
+  "Wazuh gerenciado": "Managed Wazuh",
+  "Implantado e acompanhado pela Upport": "Deployed and monitored by Upport",
+  "Central de operações de segurança": "Security operations center",
+  "Monitoramento ativo": "Active monitoring",
+  "Interface oficial do Wazuh. Dados ilustrativos do produto.": "Official Wazuh interface. Product sample data.",
+  "Visibilidade centralizada": "Centralized visibility",
+  "O que acontece no ambiente deixa de passar despercebido.": "What happens in your environment no longer goes unnoticed.",
+  "O Wazuh reúne telemetria e alertas em um único lugar. A Upport cuida da implantação, das regras, dos agentes e da rotina de acompanhamento.":
+    "Wazuh brings telemetry and alerts together in one place. Upport handles deployment, rules, agents and ongoing monitoring.",
+  "Threat hunting": "Threat hunting",
+  "Pesquisa e correlação de eventos para encontrar comportamentos suspeitos e sinais de comprometimento.":
+    "Event search and correlation to identify suspicious behavior and signs of compromise.",
+  Vulnerabilidades: "Vulnerabilities",
+  "Identificação contínua de falhas conhecidas em sistemas operacionais e aplicações monitoradas.":
+    "Continuous identification of known flaws in monitored operating systems and applications.",
+  "Integridade de arquivos": "File integrity",
+  "Alertas sobre criação, alteração ou exclusão de arquivos críticos em servidores e estações.":
+    "Alerts for the creation, modification or deletion of critical files on servers and workstations.",
+  "Endpoints e servidores": "Endpoints and servers",
+  "Monitoramento de Windows, Linux, macOS, workloads em nuvem e ambientes locais ou híbridos.":
+    "Monitoring for Windows, Linux, macOS, cloud workloads and on-premises or hybrid environments.",
+  "Eventos relacionados a táticas e técnicas conhecidas para facilitar análise e priorização.":
+    "Events mapped to known tactics and techniques to support analysis and prioritization.",
+  Conformidade: "Compliance",
+  "Visões e evidências para apoiar controles como PCI DSS, LGPD, NIST e políticas internas.":
+    "Views and evidence to support controls such as PCI DSS, LGPD, NIST and internal policies.",
+  "Operação gerenciada": "Managed operations",
+  "Ferramenta, contexto e resposta no mesmo serviço.": "Platform, context and response in one service.",
+  "A plataforma coleta os sinais. A Upport transforma alertas em uma rotina organizada de análise, comunicação e ação.":
+    "The platform collects signals. Upport turns alerts into an organized routine for analysis, communication and action.",
+  Coleta: "Collection",
+  "Agentes e integrações enviam eventos de endpoints, servidores, aplicações e nuvem.":
+    "Agents and integrations send events from endpoints, servers, applications and cloud environments.",
+  Correlação: "Correlation",
+  "Regras transformam grandes volumes de logs em alertas relevantes para o ambiente.":
+    "Rules turn large volumes of logs into alerts that are relevant to your environment.",
+  Triagem: "Triage",
+  "Severidade, ativo afetado e contexto ajudam a separar ruído de risco real.":
+    "Severity, affected assets and context help separate noise from actual risk.",
+  Resposta: "Response",
+  "Ações, responsáveis e evidências ficam organizados para reduzir o tempo de reação.":
+    "Actions, owners and evidence remain organized to reduce response time.",
+  "Da implantação à rotina": "From deployment to daily operations",
+  "Um SIEM útil, sem virar mais uma tela abandonada.": "A useful SIEM, not another abandoned dashboard.",
+  "Desenhamos a cobertura conforme os ativos e riscos da empresa. Depois, mantemos a plataforma atualizada e conectada à operação de TI.":
+    "We design coverage around your company's assets and risks, then keep the platform updated and connected to IT operations.",
+  "Conhecer TI gerenciada": "Explore managed IT",
+  "Arquitetura e implantação": "Architecture and deployment",
+  "Servidor, indexador, dashboard, certificados, retenção e agentes dimensionados para o cenário.":
+    "Server, indexer, dashboard, certificates, retention and agents sized for the environment.",
+  "Regras e integrações": "Rules and integrations",
+  "Ajustes para reduzir ruído, priorizar ativos críticos e integrar fontes importantes de eventos.":
+    "Adjustments to reduce noise, prioritize critical assets and integrate important event sources.",
+  "Relatórios e evolução": "Reporting and improvement",
+  "Indicadores de cobertura, alertas, vulnerabilidades e próximos passos para a segurança.":
+    "Coverage, alert and vulnerability indicators with clear next steps for security.",
+  "Comece pela visibilidade": "Start with visibility",
+  "Você sabe o que está acontecendo nos seus endpoints agora?": "Do you know what is happening on your endpoints right now?",
+  "Mapeamos o ambiente e mostramos como uma operação de SIEM pode proteger o que não pode parar.":
+    "We map your environment and show how SIEM operations can protect what cannot stop.",
+};
+
+const en: Dictionary = { ...sharedEn, ...homeEn, ...productEn, ...privacyEn, ...siemEn };
 
 const es: Dictionary = Object.fromEntries(
   Object.entries(en).map(([key, value]) => [key, value]),
@@ -574,6 +644,57 @@ Object.assign(es, {
   "5. Seus direitos": "5. Sus derechos",
   "6. Segurança e retenção": "6. Seguridad y retención",
   "7. Contato sobre privacidade": "7. Contacto de privacidad",
+});
+
+Object.assign(es, {
+  "SIEM e XDR gerenciado": "SIEM y XDR gestionados",
+  "Segurança que": "Seguridad que",
+  "enxerga antes": "ve antes",
+  "do incidente.": "del incidente.",
+  "A Upport implanta e opera o Wazuh para centralizar eventos, detectar ameaças e dar visibilidade contínua sobre endpoints, servidores e nuvem.": "Upport implementa y opera Wazuh para centralizar eventos, detectar amenazas y ofrecer visibilidad continua sobre endpoints, servidores y nube.",
+  "Ver cobertura": "Ver cobertura",
+  "Wazuh gerenciado": "Wazuh gestionado",
+  "Implantado e acompanhado pela Upport": "Implementado y supervisado por Upport",
+  "Central de operações de segurança": "Centro de operaciones de seguridad",
+  "Monitoramento ativo": "Monitoreo activo",
+  "Interface oficial do Wazuh. Dados ilustrativos do produto.": "Interfaz oficial de Wazuh. Datos ilustrativos del producto.",
+  "Visibilidade centralizada": "Visibilidad centralizada",
+  "O que acontece no ambiente deixa de passar despercebido.": "Lo que ocurre en el entorno deja de pasar desapercibido.",
+  "O Wazuh reúne telemetria e alertas em um único lugar. A Upport cuida da implantação, das regras, dos agentes e da rotina de acompanhamento.": "Wazuh reúne telemetría y alertas en un solo lugar. Upport se encarga de la implementación, las reglas, los agentes y el seguimiento.",
+  "Pesquisa e correlação de eventos para encontrar comportamentos suspeitos e sinais de comprometimento.": "Búsqueda y correlación de eventos para identificar comportamientos sospechosos y señales de compromiso.",
+  Vulnerabilidades: "Vulnerabilidades",
+  "Identificação contínua de falhas conhecidas em sistemas operacionais e aplicações monitoradas.": "Identificación continua de fallos conocidos en sistemas operativos y aplicaciones monitoreadas.",
+  "Integridade de arquivos": "Integridad de archivos",
+  "Alertas sobre criação, alteração ou exclusão de arquivos críticos em servidores e estações.": "Alertas sobre creación, modificación o eliminación de archivos críticos en servidores y estaciones.",
+  "Endpoints e servidores": "Endpoints y servidores",
+  "Monitoramento de Windows, Linux, macOS, workloads em nuvem e ambientes locais ou híbridos.": "Monitoreo de Windows, Linux, macOS, cargas en la nube y entornos locales o híbridos.",
+  "Eventos relacionados a táticas e técnicas conhecidas para facilitar análise e priorização.": "Eventos relacionados con tácticas y técnicas conocidas para facilitar el análisis y la priorización.",
+  Conformidade: "Cumplimiento",
+  "Visões e evidências para apoiar controles como PCI DSS, LGPD, NIST e políticas internas.": "Vistas y evidencias para apoyar controles como PCI DSS, LGPD, NIST y políticas internas.",
+  "Operação gerenciada": "Operación gestionada",
+  "Ferramenta, contexto e resposta no mesmo serviço.": "Plataforma, contexto y respuesta en un mismo servicio.",
+  "A plataforma coleta os sinais. A Upport transforma alertas em uma rotina organizada de análise, comunicação e ação.": "La plataforma recoge las señales. Upport convierte las alertas en una rutina organizada de análisis, comunicación y acción.",
+  Coleta: "Recolección",
+  "Agentes e integrações enviam eventos de endpoints, servidores, aplicações e nuvem.": "Agentes e integraciones envían eventos de endpoints, servidores, aplicaciones y nube.",
+  Correlação: "Correlación",
+  "Regras transformam grandes volumes de logs em alertas relevantes para o ambiente.": "Las reglas convierten grandes volúmenes de logs en alertas relevantes para el entorno.",
+  Triagem: "Clasificación",
+  "Severidade, ativo afetado e contexto ajudam a separar ruído de risco real.": "La severidad, el activo afectado y el contexto ayudan a separar el ruido del riesgo real.",
+  Resposta: "Respuesta",
+  "Ações, responsáveis e evidências ficam organizados para reduzir o tempo de reação.": "Las acciones, los responsables y las evidencias quedan organizados para reducir el tiempo de respuesta.",
+  "Da implantação à rotina": "De la implementación a la operación diaria",
+  "Um SIEM útil, sem virar mais uma tela abandonada.": "Un SIEM útil, sin convertirse en otro panel abandonado.",
+  "Desenhamos a cobertura conforme os ativos e riscos da empresa. Depois, mantemos a plataforma atualizada e conectada à operação de TI.": "Diseñamos la cobertura según los activos y riesgos de la empresa y mantenemos la plataforma actualizada y conectada con la operación de TI.",
+  "Conhecer TI gerenciada": "Conocer la TI gestionada",
+  "Arquitetura e implantação": "Arquitectura e implementación",
+  "Servidor, indexador, dashboard, certificados, retenção e agentes dimensionados para o cenário.": "Servidor, indexador, dashboard, certificados, retención y agentes dimensionados para el entorno.",
+  "Regras e integrações": "Reglas e integraciones",
+  "Ajustes para reduzir ruído, priorizar ativos críticos e integrar fontes importantes de eventos.": "Ajustes para reducir ruido, priorizar activos críticos e integrar fuentes importantes de eventos.",
+  "Relatórios e evolução": "Informes y evolución",
+  "Indicadores de cobertura, alertas, vulnerabilidades e próximos passos para a segurança.": "Indicadores de cobertura, alertas, vulnerabilidades y próximos pasos para la seguridad.",
+  "Comece pela visibilidade": "Comience por la visibilidad",
+  "Você sabe o que está acontecendo nos seus endpoints agora?": "¿Sabe qué está ocurriendo en sus endpoints ahora?",
+  "Mapeamos o ambiente e mostramos como uma operação de SIEM pode proteger o que não pode parar.": "Mapeamos el entorno y mostramos cómo una operación SIEM puede proteger lo que no puede detenerse.",
 });
 
 Object.assign(es, {

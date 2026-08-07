@@ -39,6 +39,7 @@ export default defineConfig({
         support: resolve(projectRoot, "suporte-ti.html"),
         erp: resolve(projectRoot, "erp.html"),
         crm: resolve(projectRoot, "crm.html"),
+        siem: resolve(projectRoot, "siem.html"),
         software: resolve(projectRoot, "software.html"),
         empresa: resolve(projectRoot, "empresa.html"),
         contato: resolve(projectRoot, "contato.html"),
